@@ -1,8 +1,0 @@
-build/
-node_modules/
-vendor/
-src/js/blocks/
-style.css
-README.md
-src/tailwind-preflight.css
-*.css

@@ -1,17 +1,17 @@
 {
-	"name": "misfist/quincy",
-	"description": "Custom WordPress theme based on wd_s",
+	"name": "misfist/tvlr-theme",
+	"description": "A custom WordPress block theme.",
 	"type": "wordpress-theme",
 	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
-			"name": "Pea Lutz",
-			"email": "pea@pealutz.me"
+			"name": "WebDevStudios",
+			"email": "contact@webdevstudios.com"
 		}
 	],
 	"config": {
 		"platform": {
-			"php": "8.0"
+			"php": "7.4"
 		},
 		"allow-plugins": {
 			"composer/installers": true,
@@ -20,19 +20,21 @@
 		"sort-packages": true
 	},
 	"require": {
-		"composer/installers": "^1.5 || ^2.0.0"
+		"composer/installers": "^1.5 || ^2.0.0",
+		"erusev/parsedown": "^1.7",
+		"erusev/parsedown-extra": "^0.8.1"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
 		"php-stubs/acf-pro-stubs": "6.0.6",
 		"phpcompatibility/phpcompatibility-wp": "^2.1.4",
-		"wp-cli/wp-cli-bundle": "^2.7.1",
+		"wp-cli/wp-cli-bundle": "^2.7",
 		"wp-coding-standards/wpcs": "^2.3.0"
 	},
 	"scripts": {
 		"format": "phpcbf --report=summary,source",
 		"lint": "phpcs --report=code",
 		"report": "phpcs --report=info",
-		"pot": "wp i18n make-pot . build/languages/quincy.pot --exclude=node_modules,vendor,build --allow-root"
+		"pot": "wp i18n make-pot . build/languages/tvlr.pot --exclude=node_modules,vendor,build --allow-root"
 	}
 }

@@ -49,7 +49,7 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="quincy_institute,quincy" />
+			<property name="prefixes" type="array" value="The_Valley_Labor_Report\tvlr,tvlr,wds" />
 		</properties>
 	</rule>
 
@@ -57,7 +57,7 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="wd_s"/>
+			<property name="text_domain" type="array" value="tvlr"/>
 		</properties>
 	</rule>
 
@@ -77,6 +77,4 @@
 	<exclude-pattern>/build/*</exclude-pattern>
 	<exclude-pattern>/node_modules/*</exclude-pattern>
 	<exclude-pattern>/vendor/*</exclude-pattern>
-	<exclude-pattern>/patterns/*</exclude-pattern>
-	<exclude-pattern>/inc/lib/*</exclude-pattern>
 </ruleset>

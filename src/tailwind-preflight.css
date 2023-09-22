@@ -64,7 +64,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 */
 
 a {
-	color: inherit;
 	text-decoration: inherit;
 }
 
@@ -146,6 +145,7 @@ table {
 3. Remove default padding in all browsers.
 */
 
+button,
 input,
 optgroup,
 select,
@@ -305,13 +305,10 @@ video,
 canvas,
 audio,
 iframe,
-figure,
-figcaption,
 embed,
 object {
 	display: block; /* 1 */
 	vertical-align: middle; /* 2 */
-	max-width: 100%;
 }
 
 /*
@@ -322,10 +319,6 @@ img,
 video {
 	max-width: 100%;
 	height: auto;
-}
-
-blockquote {
-	margin: 0;
 }
 
 /* Make elements with the HTML hidden attribute stay hidden by default */

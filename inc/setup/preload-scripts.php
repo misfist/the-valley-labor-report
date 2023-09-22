@@ -5,7 +5,7 @@
  * @package tvlr
  */
 
-namespace The_Valley_Labor_Report;
+namespace The_Valley_Labor_Report\tvlr;
 
 /**
  * Preload styles and scripts.
@@ -13,15 +13,15 @@ namespace The_Valley_Labor_Report;
  * @author WebDevStudios
  */
 function preload_scripts() {
-	$asset_file_path = get_template_directory() . '/build/index.asset.php';
+	$asset_file_path = dirname( __DIR__ ) . '/build/index.asset.php';
 
 	if ( is_readable( $asset_file_path ) ) {
 		$asset_file = include $asset_file_path;
 	} else {
-		$asset_file = array(
-			'version'      => \wp_get_theme()->get( 'Version' ),
-			'dependencies' => array( 'wp-polyfill' ),
-		);
+		$asset_file = [
+			'version'      => '1.0.0',
+			'dependencies' => [ 'wp-polyfill' ],
+		];
 	}
 
 	?>

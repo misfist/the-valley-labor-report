@@ -1,0 +1,8 @@
+build
+node_modules
+vendor
+*.min.js
+!/.*.js
+src/js/blocks
+tailwind.config.js
+package.json

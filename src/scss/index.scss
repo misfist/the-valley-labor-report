@@ -1,0 +1,13 @@
+// @layer base {
+// // Custom base styles if necessary.
+// // See https://tailwindcss.com/docs/adding-base-styles.
+// }
+
+//----------------------------------------
+// Theme Styles.
+//----------------------------------------
+@import 'config/index';
+@import 'global/index';
+@import 'elements/index';
+@import 'components/index';
+@import 'templates/index';

@@ -1,0 +1,5 @@
+build/
+vendor/
+!.*.js
+src/fonts/font-awesome/css/all/**/*.css
+src/**/*.css

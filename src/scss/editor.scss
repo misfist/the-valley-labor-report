@@ -1,0 +1,44 @@
+//----------------------------------------
+// Theme Styles.
+//----------------------------------------
+@import 'config/index';
+@import 'elements/index';
+@import 'global/index';
+@import 'components/index';
+@import 'templates/index';
+
+.is-layout-constrained {
+	> * {
+		@apply container;
+	}
+}
+
+.is-root-container {
+	@apply px-4;
+}
+
+section {
+	&.has-background {
+		@apply py-8 my-0;
+	}
+}
+
+.section {
+	&__about {
+		> .wp-block-group {
+			@apply grid gap-x-16 grid-cols-2 md:grid-cols-5/7;
+		}
+
+		.section-header {
+			@apply md:col-start-1 md:col-end-1;
+		}
+
+		.section-content {
+			@apply md:row-span-2 md:col-start-2 md:col-end-2;
+		}
+
+		.section-footer {
+			@apply md:col-start-1 md:col-end-1;
+		}
+	}
+}

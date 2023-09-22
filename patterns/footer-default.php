@@ -22,7 +22,7 @@
 		printf(
 			/* Translators: WordPress link. */
 			esc_html__( 'Proudly powered by %s', 'tvlr' ),
-			'<a href="' . esc_url( __( 'https://wordpress.org', 'tvlr' ) ) . '" rel="nofollow">WordPress</a> Hosted by WP Engine. WebDevStudios is a <strong><a href="' . esc_url( __( 'https://wd3.co/', 'tvlr' ) ) . '">WD3</a></strong> Party'
+			'<a href="' . esc_url( __( 'https://wordpress.org', 'tvlr' ) ) . '" rel="nofollow">WordPress</a>'
 		);
 		?>
 	</p>

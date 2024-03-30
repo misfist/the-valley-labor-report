@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default Footer
- * Slug: wds/footer-default
+ * Slug: tvlr/footer-default
  * Description: Footer with site logo and menus.
  * Categories: footer
  * Block Types: core/template-part/footer

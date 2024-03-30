@@ -1,18 +1,13 @@
 <?php
 /**
- * Title: Default Query
- * Slug: tvlr/query
- * Description: Query of posts in grid.
- * Categories: hidden
- * Inserter: false
- *
- * @package tvlr
+ * Title: Featured Post
+ * Slug: tvlr/query-featured
+ * Categories: query
  */
-
 ?>
-<!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","type":"constrained","inherit":true,"perPage":1},"displayLayout":{"type":"div"},"layout":{"type":"default"}} -->
+<!-- wp:query {"queryId":6,"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[]}},"enhancedPagination":true} -->
 <div class="wp-block-query">
-	<!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
+	<!-- wp:post-template -->
 		<!-- wp:group {"className":"post-container card","layout":{"type":"default"},"metadata":{"name":"Post Container"}} -->
 		<div class="wp-block-group post-container card">
 			<!-- wp:post-featured-image {"className":"entry-thumbnail"} /-->
@@ -21,14 +16,11 @@
 			<div class="wp-block-group entry-body card-body">
 				<!-- wp:group {"tagName":"header","className":"entry-header","layout":{"type":"default"},"metadata":{"name":"Post Header"}} -->
 				<header class="wp-block-group entry-header">
-					<!-- wp:post-title {"className":"entry-title card-title"} /--></header>
+					<!-- wp:post-title {"className":"entry-title card-title"} /-->
+				</header>
 				<!-- /wp:group -->
 
-				<!-- wp:group {"className":"entry-content","layout":{"type":"default"},"metadata":{"name":"Post Content"}} -->
-				<div class="wp-block-group entry-content">
-					<!-- wp:post-excerpt /-->
-				</div>
-				<!-- /wp:group -->
+				<!-- wp:post-excerpt {"className":"entry-content"} /-->
 
 				<!-- wp:group {"className":"entry-meta entry-footer card-actions","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"metadata":{"name":"Post Meta"}} -->
 				<div class="wp-block-group entry-meta">
@@ -42,10 +34,5 @@
 		</div>
 		<!-- /wp:group -->
 	<!-- /wp:post-template -->
-	<!-- wp:query-pagination -->
-		<!-- wp:query-pagination-previous /-->
-		<!-- wp:query-pagination-numbers /-->
-		<!-- wp:query-pagination-next /-->
-	<!-- /wp:query-pagination -->
 </div>
 <!-- /wp:query -->

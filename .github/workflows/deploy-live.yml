@@ -21,5 +21,11 @@ jobs:
           **/.git*
           **/.git*/**
           **/node_modules/**
+          **/vendor/**
+          .*
+          *.lock
+          composer.*
+          package.*
+          *.md
         server-dir: /wp-content/themes/tvlr/
         local-dir: ./

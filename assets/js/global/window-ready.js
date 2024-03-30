@@ -6,7 +6,7 @@
  * @author Greg Rickaby, Corey Collins
  * @since January 31, 2020
  */
-function wdsWindowReady() {
+function tvlrWindowReady() {
 	document.body.classList.add( 'ready' );
 }
 
@@ -15,7 +15,7 @@ if (
 		'loading' !== document.readyState ) &&
 	! document.documentElement.doScroll
 ) {
-	wdsWindowReady();
+	tvlrWindowReady();
 } else {
-	document.addEventListener( 'DOMContentLoaded', wdsWindowReady );
+	document.addEventListener( 'DOMContentLoaded', tvlrWindowReady );
 }

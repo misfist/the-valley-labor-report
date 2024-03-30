@@ -10,9 +10,9 @@ if (
 		'loading' !== document.readyState ) &&
 	! document.documentElement.doScroll
 ) {
-	wdsModals();
+	tvlrModals();
 } else {
-	document.addEventListener( 'DOMContentLoaded', wdsModals );
+	document.addEventListener( 'DOMContentLoaded', tvlrModals );
 }
 
 /**
@@ -21,7 +21,7 @@ if (
  * @author Corey Collins
  * @since January 31, 2020
  */
-function wdsModals() {
+function tvlrModals() {
 	const modalTrigger = document.querySelectorAll( '.modal-trigger' ),
 		modalClose = document.querySelectorAll( '.modal .close' ),
 		pageBody = document.body;

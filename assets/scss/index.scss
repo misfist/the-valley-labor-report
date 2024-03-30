@@ -6,6 +6,8 @@
 //----------------------------------------
 // Theme Styles.
 //----------------------------------------
-@import 'blocks/index';
 @import 'global/index';
+@import 'blocks/index';
+@import 'components/index';
+@import 'templates/index';
 @import 'template-tags/index';

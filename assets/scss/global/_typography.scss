@@ -1,0 +1,63 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+    @apply prose;
+}
+
+h1,
+.has-4-xl-font-size {
+    @apply text-4xl;
+}
+
+h2,
+.has-3-xl-font-size {
+    @apply text-3xl;
+}
+
+h3,
+.has-2-xl-font-size {
+    @apply text-2xl;
+}
+
+.has-xs-font-size {
+    @apply text-xs;
+}
+
+.has-sm-font-size {
+    @apply text-sm;
+}
+
+.has-base-font-size {
+    @apply text-base;
+}
+
+.has-lg-font-size {
+    @apply text-lg;
+}
+
+.has-xl-font-size {
+    @apply text-xl;
+}
+
+.has-5-xl-font-size {
+    @apply text-5xl;
+}
+
+.has-6-xl-font-size {
+    @apply text-6xl;
+}
+
+a {}
+
+.wp-block-post-excerpt,
+.entry-content {
+    @apply prose;
+
+    p,
+    li,
+    figcaption {
+        @apply prose-base;
+    }
+}

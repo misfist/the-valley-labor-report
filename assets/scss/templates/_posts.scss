@@ -1,0 +1,48 @@
+.wp-block-query-template {}
+
+.wp-block-post {
+    .post-container {
+        @apply card bg-base-100 shadow-xl;
+    }
+
+    .entry-body {
+        @apply card-body mt-0;
+    }
+
+    .entry-title,
+    .wp-block-post-title {
+        @apply card-title;
+    }
+
+    .entry-content,
+    .wp-block-post-content
+    .wp-block-post-excerpt {
+        @apply mt-0;
+
+        p {
+            @apply first:mt-0 last:mb-0;
+        }
+    }
+
+    .entry-meta {
+        @apply mt-0;
+    }
+
+    &:where( :has( .category-radio, .format-audio, .format-video ) ) {
+        .post-container {
+            @apply image-full;
+
+            > * {
+                @apply text-white #{!important};
+            }
+
+            h2 {
+                @apply text-white;
+            }
+            
+        }
+    }
+}
+
+// .wp-block-post .post-container.image-full::before
+

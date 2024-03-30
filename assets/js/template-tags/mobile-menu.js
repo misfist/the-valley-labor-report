@@ -10,9 +10,9 @@ if (
 		'loading' !== document.readyState ) &&
 	! document.documentElement.doScroll
 ) {
-	wdsMobileMenu();
+	tvlrMobileMenu();
 } else {
-	document.addEventListener( 'DOMContentLoaded', wdsMobileMenu );
+	document.addEventListener( 'DOMContentLoaded', tvlrMobileMenu );
 }
 
 /**
@@ -21,7 +21,7 @@ if (
  * @author Corey Collins
  * @since January 31, 2020
  */
-function wdsMobileMenu() {
+function tvlrMobileMenu() {
 	const subMenuParentItem = document.querySelectorAll(
 		'.mobile-menu li.menu-item-has-children, .utility-navigation li.menu-item-has-children'
 	);

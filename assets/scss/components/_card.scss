@@ -1,0 +1,11 @@
+.rounded-btn {
+    border-radius:.25rem;
+}
+
+.card {
+    border-radius: .25rem !important;
+
+    &::before {
+        border-radius: .25rem !important;
+    }
+}

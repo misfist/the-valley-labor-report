@@ -10,9 +10,9 @@ if (
 		'loading' !== document.readyState ) &&
 	! document.documentElement.doScroll
 ) {
-	wdsOffCanvas();
+	tvlrOffCanvas();
 } else {
-	document.addEventListener( 'DOMContentLoaded', wdsOffCanvas );
+	document.addEventListener( 'DOMContentLoaded', tvlrOffCanvas );
 }
 
 /**
@@ -21,7 +21,7 @@ if (
  * @author Corey Collins
  * @since January 31, 2020
  */
-function wdsOffCanvas() {
+function tvlrOffCanvas() {
 	const offCanvasScreen = document.querySelector( '.off-canvas-screen' );
 
 	if ( ! offCanvasScreen ) {

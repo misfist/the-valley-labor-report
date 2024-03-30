@@ -7,8 +7,7 @@ const topLevelPhpFiles = glob.sync( './*.php' ),
 	directoryFiles = [
 		'./inc/*.php',
 		'./template-parts/*.php',
-		'./src/js/**/*.js',
-		'./patterns/*.php',
+		'./assets/js/**/*.js',
 	];
 
 const themeJsonPath = path.join( __dirname, 'theme.json' );
@@ -37,5 +36,30 @@ module.exports = {
 		preflight: false,
 	},
 	content: topLevelPhpFiles.concat( directoryFiles ),
-	theme: { colors },
+	theme: {
+		extend: {
+			colors
+		}
+	},
+	daisyui: {
+		themes: [
+			{
+				tvlr: {
+					primary: '#B93434',
+					secondary: '#000000',
+					accent: '#D9D9D9',
+					neutral: '#2d1f01',
+					'base-100': '#ffffff',
+					info: '#D9D9D9',
+					success: '#009e6d',
+					warning: '#fcbd23',
+					error: '#B93434',
+				},
+			},
+		],
+	},
+	plugins: [ 
+		require( '@tailwindcss/typography' ),
+		require( 'daisyui' )
+	],
 };

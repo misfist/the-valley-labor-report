@@ -28,5 +28,6 @@ jobs:
           composer.*
           package.*
           *.md
+          .vscode
         server-dir: /wp-content/themes/tvlr/
         local-dir: ./

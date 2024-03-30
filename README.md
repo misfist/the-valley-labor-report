@@ -1,10 +1,10 @@
-# wd_f <!-- omit in toc -->
+# wd_s <!-- omit in toc -->
 
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwebdevstudios%2Fwd_f%2Fbadge%3Fref%3Dmain&style=flat)](https://github.com/WebDevStudios/wd_f/actions)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwebdevstudios%2Fwd_s%2Fbadge%3Fref%3Dmain&style=flat)](https://github.com/WebDevStudios/wd_s/actions)
 
-The WebDev FSE Starter Block Theme
+A starter theme from WebDevStudios. <https://wdunderscores.com>
 
-[![WebDevStudios. Your Success is Our Mission.](https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png)](https://webdevstudios.com/contact/)
+[![WebDevStudios. Your Success is Our Mission.](https://camo.githubusercontent.com/42f2d2ee1fd163a35dfde75884c89f308d0ae014e313bd3050caa1b98bfde9c6/68747470733a2f2f77656264657673747564696f732e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031382f30342f7764732d6769746875622d62616e6e65722e706e67)](https://webdevstudios.com/contact/)
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -12,22 +12,18 @@ The WebDev FSE Starter Block Theme
 - [Getting Started](#getting-started)
 	- [Prerequisites](#prerequisites)
 	- [Quick Start](#quick-start)
+	- [Advanced](#advanced)
 - [Setup](#setup)
 	- [Development](#development)
-	- [Building a block with wpcli](#building-a-block-with-wpcli)
 - [Contributing and Support](#contributing-and-support)
 
 ## Introduction
 
-`wd_f`, also known as `WebDev FSE` or `funderscores`, is an exciting and experimental sister theme of [wd_s](https://github.com/WebDevStudios/wd_s), specifically designed for those ready to dive into the world of full site editing. This cutting-edge theme is meant for hacking and exploration, allowing you to unleash your creativity and transform it into the next incredible WordPress theme.
+Hello there! I am a versatile starter theme known as `wd_s`, or `wdunderscores`. My foundation is built primarily on PHP templates, but I offer the flexibility to incorporate custom templates through the Site Editor. It's worth noting that I'm designed for customization, so it's best not to use me as a Parent Theme. Instead, harness my potential to transform me into the most amazing WordPress theme you can envision – that's what I'm here for!
 
-As a starter block theme, `wd_f` provides a solid foundation for your WordPress journey. However, it is important to note that it is not intended to be used as a Parent Theme. Instead, it is the perfect canvas for you to customize, modify, and shape into the most awesome WordPress theme you can imagine.
+I come equipped with a host of robust web technologies, including [Tailwind](https://www.tailwindcss.com), [npm](https://www.npmjs.com/), [webpack](https://webpack.js.org/), [Sass](http://sass-lang.com/), and [PostCSS](https://github.com/postcss/postcss). To ensure your code aligns with [WordPress standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/) and stays clean, I leverage [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) for CSS and JavaScript linting. What's more, I take accessibility seriously and proudly comply with both WCAG 2.1AA and Section 508 standards right from the start.
 
-I feature some of the web's most proven technologies like: [Tailwind](https://www.tailwindcss.com), [npm](https://www.npmjs.com/), [webpack](https://webpack.js.org/), [Sass](http://sass-lang.com/), and [PostCSS](https://github.com/postcss/postcss). To help you write clean code (that meets [WordPress standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)), we tap into [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) for linting CSS and JavaScript. Did I mention that I'm also accessible? Yup. I pass both WCAG 2.1AA and Section 508 standards out of the box.
-
-So, whether you're an experienced developer or a curious beginner, `wd_f` welcomes you to push the boundaries and create something extraordinary. With its flexible nature and compatibility with full site editing features, you have the power to transform every aspect of your website, from headers and footers to content layouts and beyond.
-
-Unleash your creativity, experiment with different blocks, and take advantage of the vast possibilities offered by full site editing. `wd_f` is here to support and inspire you as you embark on your WordPress adventure. Let your imagination run wild and turn `wd_f` into the next remarkable WordPress theme that will leave a lasting impression on the web.
+I also come with the Site Editor activated, providing you with even more versatility and ease in crafting your WordPress theme. Whether you're customizing templates or utilizing the Site Editor, I'm here to support your creative journey. And remember, I do require at least PHP 8.0 to be activated to unlock my full potential.
 
 ## Getting Started
 
@@ -36,32 +32,35 @@ Unleash your creativity, experiment with different blocks, and take advantage of
 Because I compile and bundle assets via NPM scripts, basic knowledge of the command line and the following dependencies are required:
 
 - [Node](https://nodejs.org) (v18+)
-- [NPM](https://npmjs.com) (v8+)
+- [NPM](https://npmjs.com) (v9+)
 - [Composer](https://getcomposer.org/)
 
 ### Quick Start
 
+If you want to keep it simple, head over to [https://wdunderscores.com](https://wdunderscores.com) and generate your `wd_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme. Alternatively, you could download a pre-built [ZIP](http://wdunderscores.com/wp-content/themes/wdunderscores/inc/prototype/wd_s.zip)
+
+### Advanced
+
 If you want to set me up manually:
 
-1. [Clone](https://github.com/WebDevStudios/wd_f) into your `wp-content/themes` directory and rename `wd_f` to fit your needs.
+1. [Download](http://wdunderscores.com/wp-content/themes/wdunderscores/inc/prototype/wd_s.zip) and extract the zip into your `wp-content/themes` directory and rename `wd_s` to fit your needs.
 
 2. Find & Replace
 
-You'll need to change all instances of the name: `wd_f`.
+You'll need to change all instances of the name: `wd_s`.
 
-- Search for: `@package wd_f` and replace with: `@package project_name` to capture the package name
-- Update `"WebDevStudios\wd_f,wd_f"` to: `"CompanyName\project_name,project_name"` (with double quotes) in phpcs.xml.dist
-- Search for: `WebDevStudios\wd_f` and replace with: `CompanyName\project_name` to capture the namespaces
-- Update `"WebDevStudios\wd_f,wd_f,wds"` to `"CompanyName\project_name,project_name,wds"` (with double quotes) in phpcs.xml.dist
-- Update `"webdevstudios/wd_f"` to `"companyname/project_name"` (with double quotes) in composer.json
-- Search for: `, 'wd_f'` and replace with: `, 'project_name'` (inside backticks) to capture the text domain
-- Update `Text Domain: wd_f` to: `Text Domain: project_name` in style.css
-- Update `"wd_f"` to: `"project_name"` (with double quotes) in phpcs.xml.dist and package.json
-- Update `'wd_f'` to: `'project_name'` (with single quotes) in inc/setup/setup.php
-- Search for: `wd_f_` and replace with: `project_name_` to capture all the function names
-- Search for: `'wd_f-` and replace with: `'project_name-` to capture prefixed handles
-- Search for `wd_f.pot` and replace with: `project_name.pot` to capture translation files
-- Search for `webdevfse.test` and replace with: `project_name.test` to match your local development URL
+- Search for: `@package wd_s` and replace with: `@package project_name` to capture the package name
+- Update `"WebDevStudios\wd_s,wd_s"` to: `"CompanyName\project_name,project_name"` (with double quotes) in phpcs.xml.dist
+- Search for: `WebDevStudios\wd_s` and replace with: `CompanyName\project_name` to capture the namespaces
+- Update `"webdevstudios/wd_s"` to `"companyname/project_name"` (with double quotes) in composer.json
+- Search for: `, 'wd_s'` and replace with: `, 'project_name'` (inside backticks) to capture the text domain
+- Update `Text Domain: wd_s` to: `Text Domain: project_name` in style.css
+- Update `"wd_s"` to: `"project_name"` (with double quotes) in phpcs.xml.dist and package.json
+- Update `'wd_s'` to: `'project_name'` (with single quotes) in inc/setup/setup.php
+- Search for: `wd_s_` and replace with: `project_name_` to capture all the function names
+- Search for: `'wd_s-` and replace with: `'project_name-` to capture prefixed handles
+- Search for `wd_s.pot` and replace with: `project_name.pot` to capture translation files
+- Search for `wdunderscores.test` and replace with: `project_name.test` to match your local development URL
 - Edit the theme information in the header of style.scss to meet your needs
 
 ## Setup
@@ -74,10 +73,10 @@ cd /wp-content/themes/your-theme
 
 Install theme dependencies and trigger an initial build.
 
->Note: You will need to have Composer and NPM 8 installed first.
+>Note: You will need to have Composer 2 and NPM 9 installed first.
 
 ```bash
-npm i
+npm i && composer i
 ```
 
 ### Development
@@ -109,6 +108,6 @@ Note: If you don't see your new block available under the block listing in the e
 
 ## Contributing and Support
 
-Your contributions and [support tickets](https://github.com/WebDevStudios/wd_f/issues) are welcome. Please see our [contributing guidelines](https://github.com/WebDevStudios/wd_f/blob/main/CONTRIBUTING.md) before submitting a pull request.
+Your contributions and [support tickets](https://github.com/WebDevStudios/wd_s/issues) are welcome. Please see our [contributing guidelines](https://github.com/WebDevStudios/wd_s/blob/main/CONTRIBUTING.md) before submitting a pull request.
 
-wd_f is free software, and is released under the terms of the GNU General Public License version 2 or any later version. See [LICENSE.md](https://github.com/WebDevStudios/wd_f/blob/main/LICENSE.md) for complete license.
+wd_s is free software, and is released under the terms of the GNU General Public License version 2 or any later version. See [LICENSE.md](https://github.com/WebDevStudios/wd_s/blob/main/LICENSE.md) for complete license.

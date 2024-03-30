@@ -23,7 +23,7 @@
 	<!-- Use WordPress "Extra" Coding Standards. -->
 	<rule ref="WordPress-Extra">
 		<!-- Allow array short syntax. -->
-		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
 		<!-- Allow short prefixes. -->
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
 	</rule>
@@ -34,7 +34,7 @@
 	<!-- The minimum supported WordPress version. This should match what's listed in style.css. -->
 	<rule ref="WordPress.WP.DeprecatedFunctions">
 		<properties>
-			<property name="minimum_supported_version" value="5.8"/>
+			<property name="minimum_wp_version" value="5.8"/>
 		</properties>
 	</rule>
 
@@ -49,7 +49,7 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="The_Valley_Labor_Report\tvlr,tvlr,wds" />
+			<property name="prefixes" type="array" value="WebDevStudios\wd_s,wd_s,wds" />
 		</properties>
 	</rule>
 
@@ -57,7 +57,7 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="tvlr"/>
+			<property name="text_domain" type="array" value="wd_s"/>
 		</properties>
 	</rule>
 

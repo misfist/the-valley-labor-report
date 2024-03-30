@@ -6,18 +6,6 @@ const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const ESLintPlugin = require( 'eslint-webpack-plugin' );
 const StylelintPlugin = require( 'stylelint-webpack-plugin' );
-const { glob } = require( 'glob' );
-
-// See: https://stackoverflow.com/a/63604863 to convert `glob` output into an object with keys as entry names.
-const customBlockEntryPaths = glob
-	.sync( './src/js/blocks/custom/*.js', {
-		dotRelative: true,
-	} )
-	.reduce( ( acc, filePath ) => {
-		const entry = filePath.replace( /^.*[\\\/]/, '' ).replace( '.js', '' );
-		acc[ entry ] = filePath;
-		return acc;
-	}, {} );
 
 /**
  * Webpack config (Development mode)
@@ -27,8 +15,8 @@ const customBlockEntryPaths = glob
 module.exports = {
 	...defaultConfig,
 	entry: {
-		index: './src/index.js',
-		...customBlockEntryPaths,
+		index: './assets/index.js',
+		critical: './assets/critical.js',
 	},
 	module: {
 		rules: [
@@ -79,19 +67,22 @@ module.exports = {
 				{
 					from: '**/*.{jpg,jpeg,png,gif,svg}',
 					to: 'images/[path][name][ext]',
-					context: path.resolve( process.cwd(), 'src/images' ),
+					context: path.resolve( process.cwd(), 'assets/images' ),
 					noErrorOnMissing: true,
 				},
 				{
 					from: '*.svg',
 					to: 'images/icons/[name][ext]',
-					context: path.resolve( process.cwd(), 'src/images/icons' ),
+					context: path.resolve(
+						process.cwd(),
+						'assets/images/icons'
+					),
 					noErrorOnMissing: true,
 				},
 				{
 					from: '**/*.{woff,woff2,eot,ttf,otf}',
 					to: 'fonts/[path][name][ext]',
-					context: path.resolve( process.cwd(), 'src/fonts' ),
+					context: path.resolve( process.cwd(), 'assets/fonts' ),
 					noErrorOnMissing: true,
 				},
 			],
@@ -102,7 +93,7 @@ module.exports = {
 		 *
 		 * @see https://github.com/cascornelissen/svg-spritemap-webpack-plugin
 		 */
-		new SVGSpritemapPlugin( 'src/images/icons/*.svg', {
+		new SVGSpritemapPlugin( 'assets/images/icons/*.svg', {
 			output: {
 				filename: 'images/icons/sprite.svg',
 			},

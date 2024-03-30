@@ -27,5 +27,11 @@ jobs:
           composer.*
           package.*
           *.md
+          .vscode/**
+          phpcs.xml.dist
+          postcss.config.js
+          tailwind.config.js
+          webpack.config.js
+          webpack.prod.js
         server-dir: /wp-content/themes/tvlr/
         local-dir: ./

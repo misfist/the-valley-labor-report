@@ -23,11 +23,11 @@ function include_inc_files() {
 		'inc/customizer/customizer.php', // Customizer additions.
 		'inc/functions/', // Custom functions that act independently of the theme templates.
 		'inc/hooks/', // Load custom filters and hooks.
-		'inc/post-types/', // Load custom post types.
+		// 'inc/post-types/', // Load custom post types.
 		'inc/setup/', // Theme setup.
-		'inc/shortcodes/', // Load shortcodes.
+		// 'inc/shortcodes/', // Load shortcodes.
 		'inc/template-tags/', // Custom template tags for this theme.
-		'inc/wpcli/',
+		// 'inc/wpcli/',
 	);
 
 	foreach ( $files as $include ) {

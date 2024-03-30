@@ -4,23 +4,17 @@ on:
         branches:
             - staging
 jobs:
-  web-deploy:
+  deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v4
-    
+    - uses: actions/checkout@v2
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      uses: sebastianpopp/ftp-action@releases/v2
       with:
-        server: ${{ secrets.SERVER }}
-        username: ${{ secrets.USERNAME }}
+        host: ${{ secrets.SERVER }}
+        user: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        protocol: ftp
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-        server-dir: /wp-content/themes/tvlr/
-        local-dir: ./
+        localDir: "./"
+        remoteDir: "/wp-content/themes/tvlr/"
+        options: "--delete --asci"

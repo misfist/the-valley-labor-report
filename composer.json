@@ -1,6 +1,6 @@
 {
-	"name": "misfist/tvlr-theme",
-	"description": "A custom WordPress block theme.",
+	"name": "webdevstudios/wd_s",
+	"description": "A starter theme from WebDevStudios.",
 	"type": "wordpress-theme",
 	"license": "GPL-2.0-or-later",
 	"authors": [
@@ -11,7 +11,7 @@
 	],
 	"config": {
 		"platform": {
-			"php": "7.4"
+			"php": "8.0"
 		},
 		"allow-plugins": {
 			"composer/installers": true,
@@ -20,21 +20,19 @@
 		"sort-packages": true
 	},
 	"require": {
-		"composer/installers": "^1.5 || ^2.0.0",
-		"erusev/parsedown": "^1.7",
-		"erusev/parsedown-extra": "^0.8.1"
+		"composer/installers": "^1.5 || ^2.0.0"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
-		"php-stubs/acf-pro-stubs": "6.0.6",
+		"php-stubs/acf-pro-stubs": "^6.0",
 		"phpcompatibility/phpcompatibility-wp": "^2.1.4",
 		"wp-cli/wp-cli-bundle": "^2.7",
-		"wp-coding-standards/wpcs": "^2.3.0"
+		"wp-coding-standards/wpcs": "^3.0"
 	},
 	"scripts": {
 		"format": "phpcbf --report=summary,source",
 		"lint": "phpcs --report=code",
 		"report": "phpcs --report=info",
-		"pot": "wp i18n make-pot . build/languages/tvlr.pot --exclude=node_modules,vendor,build --allow-root"
+		"pot": "wp i18n make-pot . build/languages/wd_s.pot --exclude=node_modules,vendor,build --allow-root"
 	}
 }

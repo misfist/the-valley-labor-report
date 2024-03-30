@@ -5,7 +5,7 @@
  * @package tvlr
  */
 
-namespace The_Valley_Labor_Report\tvlr;
+namespace TVLR;
 
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -20,7 +20,7 @@ function print_entry_footer() {
 		if ( $categories_list && get_categorized_blog() ) {
 
 			/* translators: the post category */
-			printf( '<span class="cat-links">' . esc_attr__( 'Posted in %1$s', 'tvlr' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+			printf( '<div class="cat-links">' . esc_attr__( 'Posted in %1$s', 'tvlr' ) . '</div>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
@@ -28,14 +28,14 @@ function print_entry_footer() {
 		if ( $tags_list ) {
 
 			/* translators: the post tags */
-			printf( '<span class="tags-links">' . esc_attr__( 'Tagged %1$s', 'tvlr' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+			printf( '<div class="tags-links">' . esc_attr__( 'Tagged %1$s', 'tvlr' ) . '</div>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
+		echo '<div class="comments-link">';
 		comments_popup_link( esc_attr__( 'Leave a comment', 'tvlr' ), esc_attr__( '1 Comment', 'tvlr' ), esc_attr__( '% Comments', 'tvlr' ) );
-		echo '</span>';
+		echo '</div>';
 	}
 
 	edit_post_link(
@@ -44,7 +44,7 @@ function print_entry_footer() {
 			esc_html__( 'Edit %s', 'tvlr' ),
 			wp_kses_post( get_the_title( '<span class="screen-reader-text">"', '"</span>', false ) )
 		),
-		'<span class="edit-link">',
-		'</span>'
+		'<div class="edit-link">',
+		'</div>'
 	);
 }

@@ -1,1 +1,0 @@
-# WordPress Editor Docs

@@ -5,7 +5,7 @@
  * @package tvlr
  */
 
-namespace The_Valley_Labor_Report\tvlr;
+namespace TVLR;
 
 /**
  * Flush out the transients used in tvlr_categorized_blog.

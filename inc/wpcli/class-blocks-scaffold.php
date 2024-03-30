@@ -5,25 +5,20 @@
  * @package tvlr
  */
 
-namespace The_Valley_Labor_Report\tvlr;
+namespace TVLR;
+
+use WP_CLI;
+use const TVLR\ROOT_PATH;
 
 // Exit if class already exists (for example when the plugin `WDS ACF Blocks` is active).
 if ( class_exists( 'Blocks_Scaffold' ) ) {
 	return;
 }
 
-// Define a global path and url.
-define( 'The_Valley_Labor_Report\tvlr\ROOT_PATH', trailingslashit( get_template_directory() ) );
-define( 'The_Valley_Labor_Report\tvlr\ROOT_URL', trailingslashit( get_template_directory_uri() ) );
-
-// Import wpcli.
-
-use \WP_CLI as WP_CLI;
-
 /**
  * Class Blocks_Scaffold
  *
- * @package The_Valley_Labor_Report\tvlr
+ * @package TVLR
  */
 class Blocks_Scaffold {
 
@@ -55,7 +50,7 @@ class Blocks_Scaffold {
 	 *
 	 * [--namespace=<blocknamespace>]
 	 * : Block Namespace.
-	 * : Default: The_Valley_Labor_Report\tvlr
+	 * : Default: TVLR
 	 *
 	 * ## EXAMPLES
 	 *
@@ -79,13 +74,13 @@ class Blocks_Scaffold {
 		// Merge with default args.
 		$args = wp_parse_args(
 			$assoc_args,
-			[
+			array(
 				'title'     => ucfirst( $this->name ),
 				'desc'      => '',
 				'keywords'  => strtolower( $this->name ),
 				'icon'      => 'table-row-before',
 				'namespace' => 'wds/',
-			]
+			)
 		);
 
 		// create the directory.
@@ -156,7 +151,6 @@ class Blocks_Scaffold {
 		} else {
 			WP_CLI::error( 'ERROR :: Could not create a render file.', true );
 		}
-
 	}
 
 	/**
@@ -173,22 +167,22 @@ class Blocks_Scaffold {
 		if ( $this->init_filesystem()->exists( $local_file ) ) {
 			$content = $this->init_filesystem()->get_contents( $local_file );
 			$content = str_replace(
-				[
+				array(
 					'{{name}}',
 					'{{title}}',
 					'{{description}}',
 					'{{icon}}',
 					'wds/',
 					'{{keyword}}',
-				],
-				[
+				),
+				array(
 					$this->name,
 					$args['title'],
 					$args['desc'],
 					$args['icon'],
 					trailingslashit( $args['namespace'] ),
 					$args['keyword'],
-				],
+				),
 				$content
 			);
 		}
@@ -228,14 +222,14 @@ class Blocks_Scaffold {
 		}
 
 		// copy styles.
-		if ( ! $this->init_filesystem()->copy( $asset_scss, ROOT_PATH . 'src/scss/blocks/custom/' . $this->name . '.editor.scss' ) ) {
+		if ( ! $this->init_filesystem()->copy( $asset_scss, ROOT_PATH . 'assets/scss/blocks/custom/' . $this->name . '.editor.scss' ) ) {
 			WP_CLI::error( 'ERROR :: Could not create styles file.', true );
 		}
 
 		// add js file for build process.
 		if (
 			! $this->init_filesystem()->put_contents(
-				ROOT_PATH . 'src/js/blocks/custom/' . $this->name . '.editor.js',
+				ROOT_PATH . 'assets/js/blocks/custom/' . $this->name . '.editor.js',
 				"import '../../../scss/blocks/custom/" . $this->name . ".editor.scss';\n"
 			)
 		) {
@@ -274,47 +268,18 @@ class Blocks_Scaffold {
 		}
 
 		// copy styles.
-		if ( ! $this->init_filesystem()->copy( $asset_scss, ROOT_PATH . 'src/scss/blocks/custom/' . $this->name . '.scss' ) ) {
+		if ( ! $this->init_filesystem()->copy( $asset_scss, ROOT_PATH . 'assets/scss/blocks/custom/' . $this->name . '.scss' ) ) {
 			WP_CLI::error( 'ERROR :: Could not create styles file.', true );
 		}
 
 		// add js file for build process.
 		if (
 			! $this->init_filesystem()->put_contents(
-				ROOT_PATH . 'src/js/blocks/custom/' . $this->name . '.js',
+				ROOT_PATH . 'assets/js/blocks/custom/' . $this->name . '.js',
 				"import '../../../scss/blocks/custom/" . $this->name . ".scss';\n"
 			)
 		) {
 			WP_CLI::error( 'ERROR :: Could not create a block js style file.', true );
 		}
 	}
-
 }
-
-/**
- * Registers our command when cli get's initialized.
- *
- * @since  4.0.0
- * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
- * @return void
- */
-function cli_register_commands() {
-	WP_CLI::add_command( 'wds', __NAMESPACE__ . '\Blocks_Scaffold' );
-}
-add_action( 'cli_init', __NAMESPACE__ . '\cli_register_commands' );
-
-/**
- * Register Blocks
- *
- * @return void
- * @author Jenna Hines
- * @since  2.0.0
- */
-function wds_acf_register_blocks() {
-	$wds_acf_blocks = glob( ROOT_PATH . 'blocks/*/block.json' );
-
-	foreach ( $wds_acf_blocks as $block ) {
-		register_block_type( $block );
-	}
-}
-add_action( 'init', __NAMESPACE__ . '\wds_acf_register_blocks' );

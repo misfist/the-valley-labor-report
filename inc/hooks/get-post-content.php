@@ -5,7 +5,7 @@
  * @package tvlr
  */
 
-namespace The_Valley_Labor_Report\tvlr;
+namespace TVLR;
 
 /**
  * Filters WYSIWYG content with the_content filter.

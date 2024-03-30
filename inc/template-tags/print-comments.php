@@ -5,7 +5,7 @@
  * @package tvlr
  */
 
-namespace The_Valley_Labor_Report\tvlr;
+namespace TVLR;
 
 /**
  * Display the comments if the count is more than 0.

@@ -7,7 +7,7 @@
  * @package tvlr
  */
 
-namespace The_Valley_Labor_Report\tvlr;
+namespace TVLR;
 
 /**
  * Prints HTML with author information for the current post.
@@ -16,12 +16,12 @@ namespace The_Valley_Labor_Report\tvlr;
  *
  * @param array $args Configuration args.
  */
-function print_post_author( $args = [] ) {
+function print_post_author( $args = array() ) {
 
 	// Set defaults.
-	$defaults = [
+	$defaults = array(
 		'author_text' => esc_html__( 'by', 'tvlr' ),
-	];
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );

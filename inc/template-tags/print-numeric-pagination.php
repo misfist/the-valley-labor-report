@@ -5,7 +5,7 @@
  * @package tvlr
  */
 
-namespace The_Valley_Labor_Report\tvlr;
+namespace TVLR;
 
 /**
  * Displays numeric pagination on archive pages.
@@ -15,7 +15,7 @@ namespace The_Valley_Labor_Report\tvlr;
  * @param array    $args  Array of params to customize output.
  * @param WP_Query $query The Query object; only passed if a custom WP_Query is used.
  */
-function print_numeric_pagination( $args = [], $query = null ) {
+function print_numeric_pagination( $args = array(), $query = null ) {
 	if ( ! $query ) {
 		global $wp_query;
 		$query = $wp_query;
@@ -25,12 +25,12 @@ function print_numeric_pagination( $args = [], $query = null ) {
 	$total_pages = isset( $query->max_num_pages ) ? $query->max_num_pages : 1;
 
 	// Set defaults.
-	$defaults = [
+	$defaults = array(
 		'prev_text' => '&laquo;',
 		'next_text' => '&raquo;',
 		'mid_size'  => 4,
 		'total'     => $total_pages,
-	];
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
@@ -40,9 +40,11 @@ function print_numeric_pagination( $args = [], $query = null ) {
 	}
 	?>
 
-	<nav class="pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', 'tvlr' ); ?>">
-		<?php echo paginate_links( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK. ?>
-	</nav>
+	<div class="is-layout-constrained has-global-padding">
+		<nav class="pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', 'tvlr' ); ?>">
+			<?php echo paginate_links( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK. ?>
+		</nav>
+	</div>
 
 	<?php
 }

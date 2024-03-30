@@ -5,7 +5,7 @@
  * @package tvlr
  */
 
-namespace The_Valley_Labor_Report\tvlr;
+namespace TVLR;
 
 /**
  * Return SVG markup.
@@ -16,7 +16,7 @@ namespace The_Valley_Labor_Report\tvlr;
  *
  * @return string Error string or SVG markup.
  */
-function get_svg( $args = [] ) {
+function get_svg( $args = array() ) {
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
 		return esc_attr__( 'Please define default parameters in the form of an array.', 'tvlr' );
@@ -28,7 +28,7 @@ function get_svg( $args = [] ) {
 	}
 
 	// Set defaults.
-	$defaults = [
+	$defaults = array(
 		'color'        => '',
 		'icon'         => '',
 		'title'        => '',
@@ -36,7 +36,7 @@ function get_svg( $args = [] ) {
 		'stroke-width' => '',
 		'height'       => '',
 		'width'        => '',
-	];
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );

@@ -1,13 +1,17 @@
 <?php
 /**
- * WDS wd_f functions and definitions.
+ * WDS tvlr functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package tvlr
  */
 
-namespace The_Valley_Labor_Report\tvlr;
+namespace TVLR;
+
+// Define a global path and url.
+define( 'TVLR\ROOT_PATH', trailingslashit( get_template_directory() ) );
+define( 'TVLR\ROOT_URL', trailingslashit( get_template_directory_uri() ) );
 
 /**
  * Get all the include files for the theme.
@@ -15,15 +19,16 @@ namespace The_Valley_Labor_Report\tvlr;
  * @author WebDevStudios
  */
 function include_inc_files() {
-	$files = [
+	$files = array(
+		'inc/customizer/customizer.php', // Customizer additions.
 		'inc/functions/', // Custom functions that act independently of the theme templates.
 		'inc/hooks/', // Load custom filters and hooks.
 		'inc/post-types/', // Load custom post types.
 		'inc/setup/', // Theme setup.
 		'inc/shortcodes/', // Load shortcodes.
 		'inc/template-tags/', // Custom template tags for this theme.
-		'inc/wpcli/', // WPClI to create custom blocks.
-	];
+		'inc/wpcli/',
+	);
 
 	foreach ( $files as $include ) {
 		$include = trailingslashit( get_template_directory() ) . $include;
@@ -40,8 +45,3 @@ function include_inc_files() {
 }
 
 include_inc_files();
-
-/**
- * Help admin documentation pages.
- */
-require get_template_directory() . '/docs/help-admin-pages.php';

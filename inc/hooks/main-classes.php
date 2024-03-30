@@ -5,7 +5,7 @@
  * @package tvlr
  */
 
-namespace The_Valley_Labor_Report\tvlr;
+namespace TVLR;
 
 /**
  * Adds custom classes to apply to <main>
@@ -18,7 +18,7 @@ namespace The_Valley_Labor_Report\tvlr;
  */
 function main_classes( $new_classes ) {
 
-	$classes = [ 'site-main' ];
+	$classes = array( 'site-main' );
 
 	if ( ! empty( $new_classes ) ) {
 		$classes = array_merge( $classes, $new_classes );

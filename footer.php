@@ -12,11 +12,9 @@
 use function TVLR\print_footer_block;
 
 ?>
-	<div class="wp-site-blocks">
-		<footer class="wp-block-template-part site-footer">
-			<?php block_footer_area(); ?>
-		</footer>
-	</div><!-- .wp-site-blocks -->
+	<footer class="wp-block-template-part site-footer">
+		<?php block_footer_area(); ?>
+	</footer>
 
 	<?php wp_footer(); ?>
 

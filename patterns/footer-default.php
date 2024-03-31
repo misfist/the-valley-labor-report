@@ -15,9 +15,9 @@ $copyright_info = esc_html__( ' Copyright &copy; ', 'tvlr' ) . esc_attr( gmdate(
 <div class="wp-block-group site-footer__inner">
     <!-- wp:site-logo {"width":250,"shouldSyncIcon":true} /-->
 
-	<!-- wp:paragraph -->
-	<p>
-	<?php echo $copyright_info; ?>
+	<!-- wp:paragraph {"className":"copyright-info"} -->
+	<p class="copyright-info">
+		<?php echo $copyright_info; ?>
 	</p>
 	<!-- /wp:paragraph -->
 </div>

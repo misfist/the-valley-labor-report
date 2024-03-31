@@ -16,28 +16,38 @@ get_header(); ?>
 
 	<?php if ( have_posts() ) : ?>
 
-	<header class="page-header is-layout-constrained">
+	<header class="page-header">
 		<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+			the_archive_title( '<h1 class="page-title">', '</h1>' );
+			the_archive_description( '<div class="archive-description">', '</div>' );
 		?>
 	</header><!-- .page-header -->
 
+	<div class="grid post-list">
 		<?php
-			/* Start the Loop */
+		/* Start the Loop */
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			if( is_single() ) {
+				get_template_part( 'template-parts/content', get_post_type() );
+			} else {
+				get_template_part( 'template-parts/loops/content', get_post_type() );
+			}
 
-			endwhile;
-
-			print_numeric_pagination();
-
-		else :
-			get_template_part( 'template-parts/content', 'none' );
-		endif;
+		endwhile;
 		?>
+
+	</div>
+	<!-- post-list -->
+
+		<?php
+		print_numeric_pagination();
+
+	else :
+		get_template_part( 'template-parts/content', 'none' );
+	endif;
+	?>
 
 </main><!-- #main -->
 

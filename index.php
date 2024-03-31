@@ -21,15 +21,27 @@ get_header(); ?>
 
 			<?php
 			if ( have_posts() ) :
+				?>
+				<div class="grid post-list">
+					<?php
 
-				/* Start the Loop */
-				while ( have_posts() ) :
-					the_post();
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
 
-					get_template_part( 'template-parts/content', get_post_type() );
+						if( is_single() ) {
+							get_template_part( 'template-parts/content', get_post_type() );
+						} else {
+							get_template_part( 'template-parts/loops/content', get_post_type() );
+						}
 
-				endwhile;
+					endwhile;
+					?>
 
+				</div>
+				<!-- post-list -->
+			
+				<?php
 				print_numeric_pagination();
 
 			else :

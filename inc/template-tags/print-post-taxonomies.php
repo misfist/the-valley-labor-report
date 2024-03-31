@@ -24,7 +24,7 @@ function print_post_taxonomies( $post_id ) {
 				echo '<p>' . esc_html( ucfirst( $taxonomy ) ) . ': ';
 				$term_links = array();
 				foreach ( $terms as $term ) {
-					$term_links[] = '<a href="' . esc_url( get_term_link( $term ) ) . '">' . esc_html( $term->name ) . '</a>';
+					$term_links[] = '<a href="' . esc_url( get_term_link( $term ) ) . '" class="badge">' . esc_html( $term->name ) . '</a>';
 				}
 				$imploded_terms = implode( ', ', $term_links );
 				echo wp_kses_post( $imploded_terms );

@@ -2,10 +2,10 @@
     @apply flex justify-center;
 
     .post-pagination {
-        @apply join justify-center my-4;
+        @apply join justify-center mt-8;
 
         .page-numbers {
-            @apply join-item btn btn-outline btn-sm;
+            @apply join-item btn btn-outline btn;
     
             &:not(:first-child):not(:last-child) {
                 @apply border-l-0 border-r-0 rounded-none;

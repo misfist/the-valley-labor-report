@@ -1,6 +1,17 @@
 .site-header {
-    @apply flex flex-col gap-y-4 items-stretch pt-4 lg:pt-8;
-    @apply bg-primary;
+    @apply flex flex-col gap-y-4 items-stretch pt-4;
+    @apply bg-primary shadow;
+    @apply lg:gap-y-6 lg:pt-6;
+
+    .wp-block-site-logo,
+    .wp-block-site-logo.is-default-size {
+        @apply flex h-12 min-h-[40px] min-w-[165px];
+        @apply lg:h-16;
+
+        img {
+            @apply h-full w-full object-contain;
+        }
+    }
 
     .site-branding,
     .site-subheader {}
@@ -11,9 +22,38 @@
         a {
             @apply text-white;
         }
+
+        &__inner {
+            @apply gap-0;
+            @apply xs:flex-nowrap #{!important};
+            @apply sm:gap-4;
+
+            .wp-block-column {
+                &:first-child {
+                    @apply basis-1/4 shrink w-min;
+                }
+
+                &:last-child {
+                    @apply grow;
+                    flex-basis: auto;
+                }
+            }
+        }
     }
 
     .site-subheader {
-        @apply bg-white mt-auto pt-2 pb-4 lg:pb-8;
+        @apply bg-white mt-auto py-4;
+        @apply lg:py-6;
+
+        &__inner {
+            @apply flex-col;
+            @apply sm:flex-nowrap sm:flex-row;
+        }
     }
+
+    .wp-block-social-links {
+        @apply gap-4;
+        @apply lg:gap-6;
+    }
+
 }

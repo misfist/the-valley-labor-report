@@ -11,17 +11,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header is-layout-constrained has-global-padding">
+	<header class="entry-header has-global-padding">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content is-layout-constrained has-global-padding">
+	<div class="entry-content has-global-padding">
 		<?php
 		the_content();
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links is-layout-constrained has-global-padding">' . esc_html__( 'Pages:', 'tvlr' ),
+				'before' => '<div class="page-links has-global-padding">' . esc_html__( 'Pages:', 'tvlr' ),
 				'after'  => '</div>',
 			)
 		);
@@ -29,7 +29,7 @@
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer is-layout-constrained has-global-padding">
+		<footer class="entry-footer has-global-padding">
 			<?php
 				edit_post_link(
 					sprintf(

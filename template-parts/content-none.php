@@ -9,7 +9,7 @@
 
 ?>
 
-<section class="no-results not-found is-layout-constrained">
+<section class="no-results not-found">
 
 	<header class="page-header has-global-padding">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'tvlr' ); ?></h1>

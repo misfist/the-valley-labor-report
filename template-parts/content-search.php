@@ -15,7 +15,7 @@ use function TVLR\print_entry_footer;
 
 <article <?php post_class( 'has-global-padding' ); ?>>
 
-	<header class="entry-header is-layout-constrained">
+	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' === get_post_type() ) : ?>
@@ -26,11 +26,11 @@ use function TVLR\print_entry_footer;
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary is-layout-constrained">
+	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer is-layout-constrained">
+	<footer class="entry-footer">
 		<?php print_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 

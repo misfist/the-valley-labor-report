@@ -5,15 +5,15 @@
  * Categories: call-to-action
  */
 ?>
-<!-- wp:group {"tagName":"section","align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|custom-white"}}},"spacing":{"padding":{"top":"var:preset|spacing|8","bottom":"var:preset|spacing|8"}}},"backgroundColor":"base","textColor":"custom-white","className":"newsletter-signup","layout":{"type":"constrained"},"metadata":{"name":"Newsletter Signup"}} -->
+<!-- wp:group {"tagName":"section","align":"full","className":"newsletter-signup","layout":{"type":"default"},"metadata":{"name":"Newsletter Signup"}} -->
 <section
-    class="wp-block-group alignfull newsletter-signup has-custom-white-color has-base-background-color has-text-color has-background has-link-color"
-    style="padding-top:var(--wp--preset--spacing--8);padding-bottom:var(--wp--preset--spacing--8)">
-    <!-- wp:columns -->
-    <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
+    class="wp-block-group alignfull newsletter-signup">
+    <!-- wp:columns {,"className":"newsletter-signup__inner"} -->
+    <div class="wp-block-columns newsletter-signup__inner">
+        <!-- wp:column {"verticalAlignment":"center"} -->
         <div class="wp-block-column is-vertically-aligned-center">
-            <!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|custom-white"}}}},"textColor":"custom-white"} -->
-            <h2 class="wp-block-heading has-custom-white-color has-text-color has-link-color"><?php _e( 'Subscribe to Receive
+            <!-- wp:heading -->
+            <h2 class="wp-block-heading"><?php _e( 'Subscribe to Receive
                 <strong>Last Week in Southern Labor</strong> & <strong>Boss Watch</strong> in Your Inbox', 'tvlr' ); ?>
             </h2>
             <!-- /wp:heading -->

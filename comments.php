@@ -21,7 +21,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area is-layout-constrained">
+<div id="comments" class="comments-area">
 	<h2 class="screen-reader-text"><?php esc_html_e( 'Comment section', 'tvlr' ); ?></h2>
 
 	<?php

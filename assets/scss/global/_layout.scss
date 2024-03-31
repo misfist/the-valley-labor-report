@@ -1,0 +1,32 @@
+body,
+.skip-link + .wp-site-blocks {
+    @apply flex flex-col h-screen;
+}
+
+.site-branding,
+.site-subheader__inner,
+.site-footer__inner {
+    @apply container mx-auto;
+}
+
+body:has( :not( .front-page ) ) {
+    .site-main {
+        @apply container mx-auto;
+    }
+}
+
+.front-page-container {
+    .section {
+        &:not( .alignfull ) {
+            @apply container mx-auto;
+        }
+    }
+}
+
+.site-main {
+    @apply pb-10;
+}
+
+.site-footer {
+    @apply mt-auto;
+}

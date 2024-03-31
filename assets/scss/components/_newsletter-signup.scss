@@ -1,0 +1,16 @@
+.newsletter-signup {
+    @apply py-6 bg-primary text-white;
+
+    &__inner {
+        @apply container mx-auto;
+    }
+
+    .wp-block-heading {
+        @apply font-normal text-white;
+    }
+
+    p {
+        @apply text-white;
+    }
+
+}

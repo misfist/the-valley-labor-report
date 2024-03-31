@@ -37,8 +37,25 @@ module.exports = {
 	},
 	content: topLevelPhpFiles.concat( directoryFiles ),
 	theme: {
+		container: {
+			center: true,
+			padding: '2rem',
+		},
 		extend: {
-			colors
+			container: {
+				screens: {
+					'sm': '100%',
+					'md': '100%',
+					'lg': '100%',
+					'xl': '1280px',
+					'2xl': '1280px',
+				}
+			},
+			screens: {
+				'xs': '264px',
+				'sm': '600px',
+			},
+			colors,
 		}
 	},
 	daisyui: {

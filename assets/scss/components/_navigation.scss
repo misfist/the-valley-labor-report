@@ -1,3 +1,118 @@
 .wp-block-navigation {
     @apply uppercase;
+
+    &__responsive-container {
+        &.is-menu-open {
+            .wp-block-navigation {
+                &__responsive-container {
+                    &-content {
+                        @apply px-12 pb-12 pt-16;
+                    
+                        ul {
+                            @apply mt-10;
+                        }
+                    }
+            
+                    &-close {
+                        @apply mr-10 mt-10;
+                    }
+                }
+            }
+        }
+    }
+}
+
+:not( .wp-block-navigation__responsive-container ) {
+    &.primary-navigation {
+        @apply tracking-wide;
+        @apply sm:text-[1rem] #{!important};
+        @apply lg:text-[1.5rem] #{!important};
+        
+        ul {
+            @apply sm:gap-4;
+            @apply md:gap-6;
+
+            a {
+                @apply underline decoration-2 decoration-transparent underline-offset-4;
+                @apply hover:decoration-white focus:decoration-white;
+            }
+        }
+    };
+}
+
+.secondary-navigation {
+    @apply tracking-wide;
+    @apply text-[1rem] #{!important};
+    @apply lg:text-[1.5rem] #{!important};
+
+    ul {
+        @apply gap-0 justify-center;
+        @apply sm:justify-end;
+
+        li {
+            &:not(:first-child) {
+                @apply pl-4 border-l-2 border-black;
+            }
+            &:not(:last-child) {
+                @apply pr-4;
+            }
+        }
+    }
+
+    a.wp-block-navigation-item__content {
+        text-decoration: underline;
+        @apply decoration-transparent underline-offset-4 transition-[text-decoration];
+        @apply underline decoration-2  #{!important};
+        
+        &:hover,
+        &:focus {
+            @apply decoration-current #{!important};
+        }
+    }
+}
+
+.site-header {
+    .wp-block-social-links {
+        @apply justify-center;
+        @apply sm:justify-start;
+    }
+}
+
+/**
+ * Hack core responsive nav
+ * @link https://github.com/WordPress/gutenberg/issues/45040
+ */
+@media screen and (min-width: calc( theme( 'screens.sm' ) )) {
+    .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+        display: none;
+    }
+
+    .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) .wp-block-navigation__responsive-container-close {
+        display: none
+    }
+
+    .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container.wp-block-navigation__submenu-container.wp-block-navigation__submenu-container.wp-block-navigation__submenu-container {
+        left: 0
+    }
+}
+
+@media screen and (min-width: calc( theme( 'screens.sm' ) )) and (max-width: calc( theme( 'screens.md' ) - 1px )) {
+    .wp-block-navigation__responsive-container-open:not(.always-shown) {
+        display: flex;
+        @apply p-6;
+    }
+}
+
+@media screen and (min-width: calc( theme( 'screens.md' ) )) {
+    .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+        display: block;
+    }
+
+    .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) .wp-block-navigation__responsive-container-close {
+        display: none
+    }
+
+    .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container.wp-block-navigation__submenu-container.wp-block-navigation__submenu-container.wp-block-navigation__submenu-container {
+        left: 0
+    }
 }

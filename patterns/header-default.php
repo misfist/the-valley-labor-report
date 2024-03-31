@@ -10,25 +10,50 @@
  */
 
 ?>
-<!-- wp:group {"tagName":"header","style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"constrained","wideSize":"100vw","contentSize":"80vw"}} -->
-<header class="wp-block-group" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)">
-	<!-- wp:columns {"verticalAlignment":"center"} -->
-	<div class="wp-block-columns are-vertically-aligned-center">
-		<!-- wp:column {"verticalAlignment":"center","width":"50%","layout":{"type":"constrained"}} -->
-		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
-			<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-			<div class="wp-block-group">
-				<!-- wp:site-title /-->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:column -->
+<!-- wp:group {"className":"site-branding","layout":{"type":"default"},"metadata":{"name":"Site Branding"}} -->
+<div class="wp-block-group site-branding">
+    <!-- wp:columns {"verticalAlignment":"center","className":"site-branding__inner"} -->
+    <div class="wp-block-columns are-vertically-aligned-center site-branding__inner" style="flex-wrap: no-wrap;">
+        <!-- wp:column {"verticalAlignment":"center","layout":{"type":"default"}} -->
+        <div class="wp-block-column is-vertically-aligned-center">
+            <!-- wp:site-logo {"width":250,"shouldSyncIcon":false} / -->
+            <!-- wp:site-title {"className":"screen-reader-text sr-only"} /-->
+        </div>
+        <!-- /wp:column -->
 
-		<!-- wp:column {"verticalAlignment":"center","width":"50%","layout":{"type":"constrained"}} -->
-		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
-			<!-- wp:navigation {"ref":187,"overlayBackgroundColor":"secondary-200","overlayTextColor":"primary-300","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"fontSize":"medium"} /-->
-		</div>
-		<!-- /wp:column --></div>
-	<!-- /wp:columns -->
-</header>
+        <!-- wp:column {"verticalAlignment":"center","layout":{"type":"default"}} -->
+        <div class="wp-block-column is-vertically-aligned-center">
+            <!-- wp:navigation {"ref":4,"icon":"menu","className":"primary-navigation","layout":{"type":"flex","justifyContent":"right"}} /--></div>
+        <!-- /wp:column -->
+    </div>
+    <!-- /wp:columns -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"site-subheader","metadata":{"name":"Site Subheader"}} -->
+<div class="wp-block-group site-subheader">
+    <!-- wp:columns {"verticalAlignment":"center","className":"site-subheader__inner","isStackedOnMobile":false} -->
+    <div class="wp-block-columns are-vertically-aligned-center is-not-stacked-on-mobile site-subheader__inner">
+        <!-- wp:column {"verticalAlignment":"center","layout":{"type":"default"}} -->
+        <div class="wp-block-column is-vertically-aligned-center">
+            <!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#252525","openInNewTab":true,"className":"is-style-logos-only"} -->
+            <ul class="wp-block-social-links has-icon-color is-style-logos-only">
+                <!-- wp:social-link {"url":"https://www.youtube.com/@TheValleyLaborReport","service":"youtube"} /-->
+
+                <!-- wp:social-link {"url":"https://www.facebook.com/TheValleyLaborReport","service":"facebook"} /-->
+
+                <!-- wp:social-link {"url":"https://twitter.com/LaborReporters","service":"twitter"} /-->
+            </ul>
+            <!-- /wp:social-links -->
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column {"verticalAlignment":"center","layout":{"type":"default"}} -->
+        <div class="wp-block-column is-vertically-aligned-center">
+            <!-- wp:navigation {"ref":171,"overlayMenu":"never","className":"secondary-navigation"} /-->
+        </div>
+        <!-- /wp:column -->
+    </div>
+    <!-- /wp:columns -->
+</div>
 <!-- /wp:group -->

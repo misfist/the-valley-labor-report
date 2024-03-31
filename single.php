@@ -23,7 +23,7 @@ get_header(); ?>
 			echo wp_kses_post(
 				get_the_post_navigation(
 					array(
-						'class' => 'is-layout-constrained',
+						'class' => '',
 					)
 				)
 			);

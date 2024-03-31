@@ -48,8 +48,12 @@ module.exports = {
 					'md': '100%',
 					'lg': '100%',
 					'xl': '1280px',
-					'2xl': '1280px'
+					'2xl': '1280px',
 				}
+			},
+			screens: {
+				'xs': '264px',
+				'sm': '600px',
 			},
 			colors,
 		}

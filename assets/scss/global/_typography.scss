@@ -12,7 +12,9 @@ h1,
 }
 
 h2,
-.has-3-xl-font-size {
+.has-3-xl-font-size,
+.entry-title,
+.wp-block-post-title {
     @apply text-3xl;
 }
 
@@ -49,7 +51,9 @@ h3,
     @apply text-6xl;
 }
 
-a {}
+a {
+    @apply text-black/80;
+}
 
 .wp-block-post-excerpt,
 .entry-content {
@@ -60,4 +64,9 @@ a {}
     figcaption {
         @apply prose-base;
     }
+}
+
+blockquote,
+table {
+    @apply prose;
 }

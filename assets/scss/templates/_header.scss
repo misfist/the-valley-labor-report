@@ -1,0 +1,19 @@
+.site-header {
+    @apply flex flex-col gap-y-4 items-stretch pt-4 lg:pt-8;
+    @apply bg-primary;
+
+    .site-branding,
+    .site-subheader {}
+
+    .site-branding {
+        @apply text-white;
+
+        a {
+            @apply text-white;
+        }
+    }
+
+    .site-subheader {
+        @apply bg-white mt-auto pt-2 pb-4 lg:pb-8;
+    }
+}

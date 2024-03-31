@@ -1,0 +1,33 @@
+.pagination-container {
+    @apply flex justify-center;
+
+    .post-pagination {
+        @apply join justify-center my-4;
+
+        .page-numbers {
+            @apply join-item btn btn-outline btn-sm;
+    
+            &:not(:first-child):not(:last-child) {
+                @apply border-l-0 border-r-0 rounded-none;
+            }
+    
+            &:first-child {
+                @apply border-r-0 rounded-tr-none rounded-br-none;
+            }
+    
+            &:last-child {
+                @apply border-l-0 rounded-tl-none rounded-bl-none;
+            }
+    
+            &.current {
+                @apply btn-disabled border-black bg-black text-white;
+            }
+        }
+    
+        &:not(:first-child):not(:last-child) {
+            .page-numbers {
+                @apply border-0 rounded-none;
+            }
+        }
+    }
+}

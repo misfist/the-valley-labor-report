@@ -1,0 +1,12 @@
+body:has( :not( .front-page ) ) {
+    .site-branding,
+    .site-subheader__inner,
+    .site-main,
+    .site-footer__inner {
+        @apply container mx-auto;
+    }
+}
+
+.site-main {
+    @apply pb-10;
+}

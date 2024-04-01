@@ -21,3 +21,10 @@ pre {
 	display: none;
 }
 
+.alignfull {
+	@apply w-screen mx-alignfull #{!important};
+
+	> * {
+		@apply container;
+	}
+}

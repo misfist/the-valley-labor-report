@@ -1,8 +1,25 @@
 // Edges of blocks weren't obvious. Adds subtle outline.
 .wp-block-post-content {
 	.wp-block {
+		@apply mx-auto;
+		max-width: theme( 'screens.md' );
+
+		&:not( .alignfull ) {
+			@apply w-[98%];
+		}
+
 		&.is-selected {
 			@apply p-4 outline outline-1;
+			@apply bg-gray-50;
+		}
+
+
+		&.alignwide {
+			max-width: theme( 'screens.lg' );
+		}
+
+		&.alignfull {
+			max-width: none;
 		}
 	}
 }

@@ -20,6 +20,7 @@ define( 'TVLR\ROOT_URL', trailingslashit( get_template_directory_uri() ) );
  */
 function include_inc_files() {
 	$files = array(
+		'inc/blocks/', // Block functions.
 		'inc/customizer/customizer.php', // Customizer additions.
 		'inc/functions/', // Custom functions that act independently of the theme templates.
 		'inc/hooks/', // Load custom filters and hooks.

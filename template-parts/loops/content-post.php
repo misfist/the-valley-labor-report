@@ -10,11 +10,10 @@
 use function TVLR\print_post_date;
 use function TVLR\print_post_author;
 use function TVLR\print_entry_footer;
-use function TVLR\print_post_taxonomies;
 ?>
 
 <article <?php post_class( 'post-container card' ); ?>>
-	<?php 
+	<?php
 	if( has_post_thumbnail() ) :
 		?>
 		<figure class="featured-image">

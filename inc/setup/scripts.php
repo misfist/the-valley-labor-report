@@ -34,3 +34,29 @@ function scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts' );
+
+/**
+ * Load Block Scripts
+ *
+ * @return void
+ */
+function editor_assets() {
+	$asset_file_path = get_template_directory() . '/build/blocks.asset.php';
+
+	if ( is_readable( $asset_file_path ) ) {
+		$asset_file = include $asset_file_path;
+	} else {
+		$asset_file = array(
+			'version'      => wp_get_theme()->get( 'Version' ),
+			'dependencies' => array( 'wp-blocks', 'wp-filters' ),
+		);
+	}
+
+	wp_enqueue_script(
+		'tvlr-blocks',
+		get_template_directory_uri() . '/build/blocks.js',
+		$asset_file['dependencies'],
+		$asset_file['version']
+	);
+}
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\editor_assets' );

@@ -1,0 +1,26 @@
+.wp-block-gallery {
+    &.wp-block-gallery-is-layout-grid,
+    &.is-layout-grid,
+    &.blocks-gallery-grid {
+        @apply grid grid-cols-1 #{!important};
+        @apply sm:grid-cols-2 #{!important};
+        @apply lg:grid-cols-3 #{!important};
+
+        figure.wp-block-image,
+        figure.wp-block-image:not(#individual-image) {
+            width: initial !important;
+        }
+
+        &.has-nested-images,
+        &.has-nested-images.columns-default {
+            figure.wp-block-image,
+            figure.wp-block-image:not(#individual-image) {
+                width: initial !important;
+            }
+        }
+    }
+}
+
+.wp-block-heading + .wp-block-gallery {
+    @apply mt-0;
+}

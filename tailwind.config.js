@@ -44,19 +44,22 @@ module.exports = {
 		extend: {
 			container: {
 				screens: {
-					'sm': '100%',
-					'md': '100%',
-					'lg': '100%',
-					'xl': '1280px',
+					sm: '100%',
+					md: '100%',
+					lg: '100%',
+					xl: '1280px',
 					'2xl': '1280px',
-				}
+				},
 			},
 			screens: {
-				'xs': '264px',
-				'sm': '600px',
+				xs: '264px',
+				sm: '600px',
 			},
 			colors,
-		}
+			margin: {
+				'alignfull': 'calc(50% - 50vw)',
+			}
+		},
 	},
 	daisyui: {
 		themes: [
@@ -75,8 +78,5 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [ 
-		require( '@tailwindcss/typography' ),
-		require( 'daisyui' )
-	],
+	plugins: [ require( '@tailwindcss/typography' ), require( 'daisyui' ) ],
 };

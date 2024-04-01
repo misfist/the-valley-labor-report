@@ -47,8 +47,12 @@
         }
     }
 
-    .term a {
-        @apply badge badge-outline border-gray-800 text-neutral self-center align-middle;
+    .wp-block-post-terms,
+    .term {
+        a {
+            @apply badge badge-outline border-gray-800 text-neutral self-center align-middle pt-[1px];
+        }
+    
     }
 
     &:where( :has( .category-radio, .format-audio, .format-video ) ) {

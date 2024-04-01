@@ -1,1 +1,72 @@
 .front-page {}
+
+.single {
+
+    .site-main  {
+        &:where( :has( .has-post-thumbnail ) ) {
+            @apply pt-0;
+        }
+    }
+
+    .featured-image {
+        @apply bg-black max-h-[300px] overflow-clip;
+        @apply md:max-h-[400px] lg:max-h-[500px];
+
+        img {
+            @apply max-h-[300px] object-cover object-center;
+            @apply md:max-h-[400px] lg:max-h-[500px];
+        }
+        
+    }
+
+    .entry-title,
+    .page-title {
+        &:where( :has( .prepend ) ) {
+            @apply block;
+
+            .prepend {
+                @apply inline-block after:content-[':'] mr-2;
+            }
+        }
+    }
+
+    .entry-header + .entry-content,
+    .page-header + .entry-content {
+        @apply mt-8 pt-8 border-t border-gray-300;
+        @apply lg:mt-12 lg:pt-12;
+    }
+
+    .entry-content {
+        p {
+            @apply first:mt-0 last:mb-0;
+        }
+    }
+
+    .entry-meta {
+        @apply flex items-center gap-y-2 text-black/70 tracking-wide leading-none;
+
+        .posted-on {
+            @apply pr-2;
+        }
+
+        .post-author {
+            @apply pl-2 border-l-2 border-gray-900;
+        }
+
+        .post-terms {
+            @apply ml-auto;
+        }
+    }
+
+    .post-terms,
+    .entry-footer {
+        
+        .term,
+        .cat-links {
+            a {
+                @apply badge badge-outline border-gray-800 text-neutral self-center align-middle pt-[1px];
+            }
+        
+        }
+    }
+}

@@ -26,7 +26,7 @@
     &.primary-navigation {
         @apply tracking-wide;
         @apply sm:text-[1rem] #{!important};
-        @apply lg:text-[1.5rem] #{!important};
+        @apply lg:text-[1.25rem] #{!important};
         
         ul {
             @apply sm:gap-4;
@@ -43,7 +43,7 @@
 .secondary-navigation {
     @apply tracking-wide;
     @apply text-[1rem] #{!important};
-    @apply lg:text-[1.5rem] #{!important};
+    @apply lg:text-[1.25rem] #{!important};
 
     ul {
         @apply gap-0 justify-center;

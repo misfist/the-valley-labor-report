@@ -15,8 +15,8 @@ namespace TVLR;
  * @return string An empty string if Yoast is not found, otherwise a block of meta tag HTML.
  */
 function add_og_tags() {
-	// Bail if Yoast is installed, since it will handle things.
-	if ( class_exists( 'WPSEO_Options' ) ) {
+	// Bail if Yoast or SEO Framework is installed, since it will handle things.
+	if ( class_exists( 'WPSEO_Options' ) || \defined( 'THE_SEO_FRAMEWORK_PRESENT' ) ) {
 		return '';
 	}
 

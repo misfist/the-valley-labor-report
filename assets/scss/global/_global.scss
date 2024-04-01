@@ -27,4 +27,12 @@ pre {
 	> * {
 		@apply container;
 	}
+
+	> figure,
+	> img,
+	figure,
+	img {
+		@apply lg:container;
+		@apply px-0;
+	}
 }

@@ -20,7 +20,7 @@ function print_entry_footer() {
 		if ( $categories_list && get_categorized_blog() ) {
 
 			/* translators: the post category */
-			printf( '<div class="cat-links">' . esc_attr__( 'Posted in %1$s', 'tvlr' ) . '</div>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+			printf( '<div class="cat-links">' . __( '<span class="screen-reader-text">Posted in</span> %1$s', 'tvlr' ) . '</div>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
@@ -28,7 +28,7 @@ function print_entry_footer() {
 		if ( $tags_list ) {
 
 			/* translators: the post tags */
-			printf( '<div class="tags-links">' . esc_attr__( 'Tagged %1$s', 'tvlr' ) . '</div>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+			printf( '<div class="tags-links">' . __( '<span class="screen-reader-text">Tagged</span> %1$s', 'tvlr' ) . '</div>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		}
 	}
 

@@ -5,8 +5,12 @@
     }
 
     .featured-image,
-    .wp-block-featured-image {
-        @apply mb-0;
+    .wp-block-post-featured-image {
+        @apply mb-0 max-h-[300px];
+
+        a {
+            @apply w-full basis-full;
+        }
     }
 
     .entry-body {
@@ -17,8 +21,15 @@
     .entry-title,
     .wp-block-post-title {
         @apply card-title;
-        @apply text-3xl;
-        @apply my-0;
+        @apply text-3xl my-0;
+
+        &:where( :has( .prepend ) ) {
+            @apply block;
+
+            .prepend {
+                @apply inline-block after:content-[':'] mr-2;
+            }
+        }
     }
 
     .entry-content,
@@ -52,7 +63,6 @@
         a {
             @apply badge badge-outline border-gray-800 text-neutral self-center align-middle pt-[1px];
         }
-    
     }
 
     &:where( :has( .category-radio, .format-audio, .format-video ) ) {
@@ -99,8 +109,10 @@
     @apply gap-2 #{!important};
 }
 
-:where( .site-main h1.entry-title ) {
-    @apply sr-only;
+h1.entry-title {
+    :where( body:has( :not( .single-post ) ) ) {
+        @apply sr-only;
+    }
 }
 
 .section + .has-background,

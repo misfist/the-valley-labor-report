@@ -60,6 +60,12 @@ a {
     @apply text-black/80;
 }
 
+.wp-block-post-title,
+.entry-title,
+.page-title {
+    @apply text-balance;
+}
+
 .wp-block-post-excerpt,
 .wp-block-post-content {
     @apply prose;
@@ -77,7 +83,3 @@ table,
 figcaption {
     @apply prose;
 }
-
-// :where( :has( .wp-block-group ) ) {
-//     @apply not-prose;
-// }

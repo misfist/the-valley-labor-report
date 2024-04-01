@@ -9,7 +9,8 @@
 <!-- wp:group {"tagName":"section","className":"section latest-videos","layout":{"type":"constrained"},"metadata":{"name":"Latest Clips"}} -->
 <section class="wp-block-group section latest-videos">
     <!-- wp:group {"tagName":"header","className":"section__header","layout":{"type":"constrained"},"metadata":{"name":"Section Header"}} -->
-    <header class="wp-block-group section__header"><!-- wp:heading {"className":"section__title"} -->
+    <header class="wp-block-group section__header">
+        <!-- wp:heading {"className":"section__title"} -->
         <h2 class="wp-block-heading section__title">Latest Clips</h2>
         <!-- /wp:heading -->
     </header>
@@ -19,7 +20,7 @@
     <div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
         <!-- wp:group {"className":"post-container card image-full","layout":{"type":"default"},"metadata":{"name":"Post Container"}} -->
         <div class="wp-block-group post-container card image-full">
-            <!-- wp:post-featured-image {"className":"entry-thumbnail"} /-->
+            <!-- wp:post-featured-image {"className":"entry-thumbnail","isLink":true} /-->
 
             <!-- wp:group {"className":"entry-body card-body","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"center"},"metadata":{"name":"Post Body"}} -->
             <div class="wp-block-group entry-body card-body">

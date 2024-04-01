@@ -1,0 +1,37 @@
+@mixin chevron( $position: after, $direction: right, $color: var( --wp--custom--color--black ), $size: .75em, $weight: 2px ) {
+    position: relative;
+
+    &:#{$position} {
+        border-style: solid;
+        border-width: #{$weight} #{$weight} 0 0;
+        content: '';
+        display: inline-block;
+        height: $size;
+        width: $size;
+        left: 0.5em;
+        right: auto;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        position: absolute;
+        color: $color;
+
+        @if $direction == up {
+            transform: rotate(-45deg);
+        } @else if $direction == down {
+            transform: rotate(135deg);
+        } @else if $direction == left {
+            transform: rotate(-135deg);
+        } @else {
+            transform: rotate(45deg);
+        }
+
+        @if $position == after {
+            right: 0.5em;
+            left: auto;
+        }
+    }
+
+
+}

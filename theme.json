@@ -27,7 +27,7 @@
 			"gradients": [],
 			"palette": [
 				{
-					"color": "#cc2703",
+					"color": "var( --wp--preset--color--contrast )",
 					"name": "Base",
 					"slug": "text"
 				},

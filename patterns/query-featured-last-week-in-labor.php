@@ -20,7 +20,7 @@
 					<!-- wp:post-title {"className":"entry-title card-title","isLink":true} /-->
 
 					<!-- wp:group {"className":"entry-meta","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"metadata":{"name":"Post Meta"}} -->
-					<div class="wp-block-group">
+					<div class="wp-block-group entry-meta">
 						<!-- wp:post-date /-->
 
 						<!-- wp:post-author {"avatarSize":24,"showAvatar":false,"isLink":true} /-->

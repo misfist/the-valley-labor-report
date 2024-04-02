@@ -32,7 +32,7 @@
 				<!-- /wp:group -->
 
 				<!-- wp:group {"className":"entry-meta entry-footer card-actions","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"metadata":{"name":"Post Meta"}} -->
-				<div class="wp-block-group entry-meta">
+				<div class="wp-block-group entry-meta card-actions">
 					<!-- wp:post-date /-->
 
 					<!-- wp:post-author {"avatarSize":24,"showAvatar":false} /-->

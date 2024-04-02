@@ -26,7 +26,7 @@ function get_post_term( $post_id = 0, $taxonomy = 'category', $field = 'name' ) 
 
 /**
  * Get Post Term Object
- * Retrieve a single term.
+ * Retrieve a single term object.
  *
  * @param  integer $post_id
  * @return mixed object \WP_Term || boolean false

@@ -56,6 +56,11 @@ h3,
     @apply text-6xl;
 }
 
+.is-style-embellished {
+    @include embellish-text( $weight: 2px, $color: black );
+    @apply uppercase tracking-wide text-xl mt-8;
+}
+
 a {
     @apply text-black/80;
 }

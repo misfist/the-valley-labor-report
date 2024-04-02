@@ -1,4 +1,4 @@
-@mixin chevron( $position: after, $direction: right, $color: var( --wp--custom--color--black ), $size: .75em, $weight: 2px ) {
+@mixin chevron( $position: after, $direction: right, $color: var( --wp--preset--color--black ), $size: .75em, $weight: 2px ) {
     position: relative;
 
     &:#{$position} {
@@ -34,4 +34,18 @@
     }
 
 
+}
+
+@mixin embellish-text( $color: var( --wp--preset--color--black ), $weight: 1px, $length: 1fr ) {
+    display: grid;
+    grid-template-columns: #{$length} max-content #{$length};
+    align-items: center;
+    gap: 0.5rem;
+    
+    &::before,
+    &::after {
+        content: '';
+        height: $weight;
+        background-color: $color;
+    }
 }

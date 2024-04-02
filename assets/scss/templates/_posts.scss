@@ -13,9 +13,21 @@
         }
     }
 
+    .entry-header {
+        @apply flex flex-wrap gap-y-4;
+    }
+
+    .entry-header + .wp-block-post-excerpt {
+        @apply border-t border-gray-300 mt-4 pt-4;
+    }
+
     .entry-body {
         @apply card-body mt-0;
         @apply items-stretch;
+
+        :where( p ) {
+            @apply grow-0 #{!important};
+        }
     }
 
     .entry-title,
@@ -51,7 +63,7 @@
     }
 
     .entry-meta {
-        @apply flex text-black/70 tracking-wide justify-between;
+        @apply flex w-full text-black/70 tracking-wide justify-between;
 
         &.is-content-justification-center {
             @apply justify-center;
@@ -79,30 +91,23 @@
             
         }
     }
+
+    &.featured {
+        .wp-block-query {
+            @apply h-full;
+        }
+
+        .entry-meta {
+            @apply flex flex-nowrap;
+            @apply gap-2 #{!important};
+        }
+    }
 }
 
 .post-list {
     @apply grid gap-4;
     @apply sm:grid-cols-2 gap-6;
     @apply lg:grid-cols-3;
-}
-
-.post-list,
-.wp-block-post {
-    &.featured {
-        .entry-meta {
-            @apply flex flex-nowrap;
-            @apply gap-2 #{!important};
-        }
-    }
-
-    .entry-body {
-        .entry-meta {
-            :where( p ) {
-                @apply grow-0 #{!important};
-            }
-        }
-    }
 }
 
 :where( body .is-layout-flex.entry-meta ) {
@@ -121,4 +126,13 @@ h1.entry-title {
 .has-background + .wp-block-heading {
     @apply mt-8;
     @apply lg:mt-10;
+}
+
+.featured-posts {
+    .wp-block-query,
+    .wp-block-post-template,
+    .wp-block-post,
+    .post-container {
+        @apply h-full;
+    }
 }

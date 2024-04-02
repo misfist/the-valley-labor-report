@@ -8,5 +8,13 @@
     &::before {
         border-radius: .25rem !important;
     }
+
+    &-body {
+        @apply gap-y-4;
+    }
+
+    &-actions {
+        @apply flex justify-end;
+    }
 }
 

@@ -41,7 +41,11 @@ function get_post_term_object( $post_id = 0, $taxonomy = 'category' ) {
 	} else {
 		$term = \wp_get_post_terms( $post_id, $taxonomy, array( 'count' => 1 ) );
 		if ( ! empty( $term ) && ! \is_wp_error( $term ) ) {
-			return $term;
+			if( is_array( $term ) ) {
+				return $term[0];
+			} else {
+				return $term;
+			}
 		}		
 	}
 	return false;

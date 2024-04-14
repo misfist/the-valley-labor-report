@@ -43,6 +43,10 @@ function body_classes( $classes ) {
 	// Give all pages a unique class.
 	if ( is_page() ) {
 		$classes[] = 'page-' . basename( get_permalink() );
+
+		if( is_front_page() ) {
+			$classes[] = 'front-page';
+		}
 	}
 
 	// Adds a class of hfeed to non-singular pages.

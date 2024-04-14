@@ -11,14 +11,19 @@ use function TVLR\print_post_date;
 use function TVLR\print_post_author;
 use function TVLR\print_entry_footer;
 use function TVLR\print_post_taxonomies;
+use function TVLR\get_post_term_image;
+use function TVLR\get_post_term_image_src;
+use function TVLR\get_post_term_image_id;
 ?>
 
 <article <?php post_class( 'post-container' ); ?>>
 
-	<?php 
-	if( has_post_thumbnail() ) :
+	<?php
+	if ( has_post_thumbnail() ) :
+		$caption = get_the_post_thumbnail_caption();
 		?>
-		<figure class="featured-image alignfull">
+		<figure 
+			class="featured-image alignfull<?php echo ( $caption ) ? ' has-caption' : ''; ?>">
 			<?php
 			$size = 'full';
 			the_post_thumbnail( $size );
@@ -26,12 +31,20 @@ use function TVLR\print_post_taxonomies;
 		</figure>
 		<!-- .featured-image -->
 		<?php
+		if ( $caption ) :
+			?>
+			<figcaption>
+				<?php echo wp_kses_post( $caption ); ?>
+			</figcaption>
+			<?php
+		endif;
 	endif;
 	?>
 
 	<header class="entry-header has-global-padding">
 		<?php
-		the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		the_title( '<h1 class="entry-title">', '</h1>' );
+		?>
 
 		<div class="entry-meta">
 			<?php print_post_date(); ?>

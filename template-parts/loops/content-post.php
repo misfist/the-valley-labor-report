@@ -10,17 +10,20 @@
 use function TVLR\print_post_date;
 use function TVLR\print_post_author;
 use function TVLR\print_entry_footer;
+use function TVLR\get_post_term_image_id;
 ?>
 
 <article <?php post_class( 'post-container card' ); ?>>
 	<?php
-	if( has_post_thumbnail() ) :
+	if ( has_post_thumbnail() ) :
 		?>
 		<figure class="featured-image">
+			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
 			<?php
 			$size = 'large';
 			the_post_thumbnail( $size );
 			?>
+			</a>
 		</figure>
 		<!-- .featured-image -->
 		<?php

@@ -29,7 +29,7 @@ get_header(); ?>
 					while ( have_posts() ) :
 						the_post();
 
-						if( is_single() ) {
+						if ( is_single() ) {
 							get_template_part( 'template-parts/content', get_post_type() );
 						} else {
 							get_template_part( 'template-parts/loops/content', get_post_type() );

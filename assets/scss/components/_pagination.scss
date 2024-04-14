@@ -20,7 +20,7 @@
             }
     
             &.current {
-                @apply btn-disabled border-black bg-black text-white;
+                @apply btn-disabled border-black bg-primary text-white;
             }
         }
     

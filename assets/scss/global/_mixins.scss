@@ -49,3 +49,24 @@
         background-color: $color;
     }
 }
+
+@mixin striped-border( $color1: var( --wp--preset--color--accent ), $color2: var( --wp--preset--color--black ), $side: left ) {
+    // border-image: repeating-linear-gradient(45deg, $color2, $color2 5px, $color1 6px, $color1 15px, $color2 16px, $color2 20px) 20/1rem;
+
+
+    @if $side == top {
+        // border-top: 1rem solid $color1;
+        border-width: 1rem 0 0 0;
+    } @else if $side == right {
+        // border-right: 1rem solid $color1;
+        border-width: 0 1rem 0 0;
+    } @else if $side == bottom {
+        // border-bottom: 1rem solid $color1;
+        border-width: 0 0 1rem 0;
+    } @else {
+        // border-left: 1rem solid $color1;
+        border-width: 0 0 0 1rem;
+    }
+    border-image: repeating-linear-gradient(45deg, $color2, $color2 5px, $color1 6px, $color1 15px, $color2 16px, $color2 20px) 20/1rem;
+}
+

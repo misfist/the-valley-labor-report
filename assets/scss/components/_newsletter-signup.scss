@@ -1,12 +1,12 @@
 .newsletter-signup {
-    @apply py-6 bg-primary text-white;
+    @apply py-6 bg-gray-200;
 
     &__inner {
         @apply container mx-auto;
     }
 
     .wp-block-heading {
-        @apply font-normal text-white;
+        @apply font-normal;
     }
 
     p {

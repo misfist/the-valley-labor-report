@@ -1,4 +1,39 @@
-.front-page {}
+.front-page {
+    .wp-block-post-content {
+        @apply container;
+    }
+
+    .featured-posts {
+        .wp-block-query {
+            @apply mt-0;
+        }
+
+        .wp-block-column {
+            @apply grid grid-cols-1;
+            grid-template-rows: auto 1fr;
+        }
+    }
+}
+
+.single,
+.page {
+    :is(article, aside, nav) {
+        h1 {
+            @apply mt-0 #{!important};
+        }
+    }
+
+    :where(article) {
+        h1 {
+            @extend .is-style-section-heading;
+            @apply  text-5xl;
+        }
+
+        .entry-content {
+            @apply lg:pr-[5%];
+        }
+    }
+}
 
 .single {
 
@@ -9,25 +44,21 @@
     }
 
     .featured-image {
-        @apply bg-black max-h-[300px] overflow-clip;
-        @apply md:max-h-[400px] lg:max-h-[500px];
+        @apply bg-black;
 
-        img {
+        > img {
             @apply max-h-[300px] object-cover object-center;
             @apply md:max-h-[400px] lg:max-h-[500px];
-        }
-        
+        }        
+    }
+
+    :where( .has-caption ) {
+        @apply mb-0;
     }
 
     .entry-title,
     .page-title {
-        &:where( :has( .prepend ) ) {
-            @apply block;
-
-            .prepend {
-                @apply inline-block after:content-[':'] mr-2;
-            }
-        }
+        @apply mt-0;
     }
 
     .entry-header + .entry-content,
@@ -58,15 +89,4 @@
         }
     }
 
-    .post-terms,
-    .entry-footer {
-        
-        .term,
-        .cat-links {
-            a {
-                @apply badge badge-outline border-gray-800 text-neutral self-center align-middle pt-[1px];
-            }
-        
-        }
-    }
 }

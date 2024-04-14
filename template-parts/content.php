@@ -22,25 +22,7 @@ use function TVLR\print_post_taxonomies;
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php print_post_date(); ?>
-				<?php print_post_author(); ?>
-				<?php
-				// Use the print_post_taxonomies template tag - set up the optional args.
-				print_post_taxonomies(
-					array(
-						'post_id'      => $post->ID,
-						'in_list'      => 0,
-						'primary_only' => true,
-						'linked'       => false,
-					)
-				);
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content has-global-padding">

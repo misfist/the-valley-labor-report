@@ -14,8 +14,8 @@ get_header(); ?>
 <div class="wp-site-blocks">
 	<main id="main" class="<?php echo esc_attr( main_classes( array() ) ); ?>">
 
-		<?php 
-		if ( have_posts() ) : 
+		<?php
+		if ( have_posts() ) :
 			?>
 			<header class="entry-header has-global-padding">
 				<h1 class="page-title"><?php single_post_title(); ?></h1>
@@ -27,7 +27,7 @@ get_header(); ?>
 				while ( have_posts() ) :
 					the_post();
 
-					if( is_single() ) {
+					if ( is_single() ) {
 						get_template_part( 'template-parts/content', get_post_type() );
 					} else {
 						get_template_part( 'template-parts/loops/content', get_post_type() );

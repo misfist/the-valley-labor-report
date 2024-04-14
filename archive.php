@@ -16,9 +16,9 @@ get_header(); ?>
 
 	<?php if ( have_posts() ) : ?>
 
-	<header class="page-header">
+	<header class="page-header archive-header">
 		<?php
-			the_archive_title( '<h1 class="page-title">', '</h1>' );
+			the_archive_title( '<h1 class="page-title archive-title">', '</h1>' );
 			the_archive_description( '<div class="archive-description">', '</div>' );
 		?>
 	</header><!-- .page-header -->
@@ -29,7 +29,7 @@ get_header(); ?>
 		while ( have_posts() ) :
 			the_post();
 
-			if( is_single() ) {
+			if ( is_single() ) {
 				get_template_part( 'template-parts/content', get_post_type() );
 			} else {
 				get_template_part( 'template-parts/loops/content', get_post_type() );

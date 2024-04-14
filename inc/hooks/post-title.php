@@ -31,4 +31,4 @@ function prepend_term( $post_title, $post_id, $taxonomy = 'category' ) : string 
 	}
 	return $post_title;
 }
-\add_filter( 'the_title', __NAMESPACE__ . '\prepend_term', null, 2 );
+// \add_filter( 'the_title', __NAMESPACE__ . '\prepend_term', null, 2 );

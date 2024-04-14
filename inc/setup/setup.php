@@ -43,7 +43,14 @@ function setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'full-width', 1920, 1080, false );
+	add_image_size( 'full-width', 1600, 800, false ); // 2:1
+
+	update_option( 'thumbnail_size_w', 320 );
+	update_option( 'thumbnail_size_h', 160 );
+	update_option( 'thumbnail_crop', 1 ); // 2:1
+
+	update_option( 'medium_size_w', 640 );
+	update_option( 'medium_size_h', 640 );
 
 	// Register navigation menus.
 	register_nav_menus(
@@ -71,8 +78,8 @@ function setup() {
 	add_theme_support(
 		'custom-logo',
 		array(
-			'height'      => 250,
-			'width'       => 500,
+			'height'      => 86,
+			'width'       => 274,
 			'flex-height' => true,
 			'flex-width'  => true,
 			'header-text' => array( 'site-title', 'site-description' ),
@@ -87,7 +94,7 @@ function setup() {
 
 	// Gutenberg editor styles support.
 	add_theme_support( 'editor-styles' );
-	add_editor_style( 'build/index.css' );
+	add_editor_style( 'build/editor.css' );
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );

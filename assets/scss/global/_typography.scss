@@ -1,10 +1,23 @@
+body {
+    @apply font-body;
+}
+
 h1,
 h2,
 h3,
 h4,
+h5 {}
+
+h1,
+h2,
+h3 {
+    @apply font-display font-normal;    
+}
+
+// h3,
+h4,
 h5 {
-    // @apply prose;
-    // @apply max-w-none;
+    @apply font-heading;    
 }
 
 h1,
@@ -21,6 +34,11 @@ h2,
 .entry-title,
 .wp-block-post-title {
     @apply text-3xl;
+    
+    a {
+        @apply hover:text-primary focus:text-primary;
+    }
+    
 }
 
 h3,
@@ -56,21 +74,34 @@ h3,
     @apply text-6xl;
 }
 
+a {
+    @apply text-black/80;
+}
+
 .is-style-embellished {
     @include embellish-text( $weight: 2px, $color: black );
     @apply uppercase tracking-wide text-xl mt-8;
 }
 
-a {
-    @apply text-black/80;
+.is-style-intro,
+.is-style-subheading {
+    @apply font-serif;
+}
+
+.entry-meta,
+.post-meta {
+    @apply font-sans font-bold;
+
+    a {
+        @apply hover:text-primary focus:text-primary;
+    }
 }
 
 .wp-block-post-title,
 .entry-title,
-.page-title {
-    @apply text-balance;
-}
+.page-title {}
 
+.single .entry-content,
 .wp-block-post-excerpt,
 .wp-block-post-content {
     @apply prose;
@@ -84,7 +115,13 @@ a {
 }
 
 blockquote,
-table,
-figcaption {
+table {
     @apply prose;
+}
+
+.is-style-section-heading,
+.section-heading,
+.archive-title {
+    @apply font-display text-4xl;
+    @apply border-t-4 border-primary pt-4;
 }

@@ -6,7 +6,18 @@
 
     .featured-image,
     .wp-block-post-featured-image {
-        @apply mb-0 max-h-[300px];
+        @apply mb-0 max-h-[300px] relative overflow-clip;
+
+        img {
+            @apply transition-transform duration-300;
+        }
+
+        &:hover,
+        &:focus {
+            img {
+                @apply scale-105 transition-transform;
+            }
+        }
 
         a {
             @apply w-full basis-full;
@@ -15,10 +26,6 @@
 
     .entry-header {
         @apply flex flex-wrap gap-y-4;
-    }
-
-    .entry-header + .wp-block-post-excerpt {
-        @apply border-t border-gray-300 mt-4 pt-4;
     }
 
     .entry-body {
@@ -45,6 +52,7 @@
     }
 
     .entry-content,
+    .post-excerpt,
     .wp-block-post-content
     .wp-block-post-excerpt {
         @apply mt-0;
@@ -54,7 +62,14 @@
         }
     }
 
-    .wp-post-image {
+    .wp-block-post-excerpt {
+        &__excerpt {
+            @apply line-clamp-4;
+        }
+    }
+
+    .wp-post-image,
+    .post-image {
         @apply w-full h-auto object-cover;
     }
 
@@ -68,12 +83,9 @@
         &.is-content-justification-center {
             @apply justify-center;
         }
-    }
 
-    .wp-block-post-terms,
-    .term {
-        a {
-            @apply badge badge-outline border-gray-800 text-neutral self-center align-middle pt-[1px];
+        &.is-content-justification-left {
+            @apply justify-start;
         }
     }
 
@@ -114,6 +126,16 @@
     @apply gap-2 #{!important};
 }
 
+:where( .wp-block-group ) {
+    .section-header {
+        @apply mb-4;
+    }
+
+    .wp-block-query {
+        @apply mt-0;
+    }
+}
+
 h1.entry-title {
     :where( body:has( :not( .single-post ) ) ) {
         @apply sr-only;
@@ -129,10 +151,24 @@ h1.entry-title {
 }
 
 .featured-posts {
-    .wp-block-query,
     .wp-block-post-template,
     .wp-block-post,
     .post-container {
         @apply h-full;
+    }
+}
+
+.post {
+    .wp-block-post-terms,
+    .post-terms,
+    .term,
+    .cat-links {
+        a {
+            @apply badge badge-outline;
+        }
+    }
+
+    .cat-links {
+        @apply mt-6;
     }
 }

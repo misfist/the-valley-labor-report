@@ -1,13 +1,9 @@
 .rounded-btn {
-    border-radius:.25rem;
+    @apply rounded;
 }
 
 .card {
-    border-radius: .25rem !important;
-
-    &::before {
-        border-radius: .25rem !important;
-    }
+    @apply rounded-none before:rounded-none;
 
     &-body {
         @apply gap-y-4;
@@ -15,6 +11,10 @@
 
     &-actions {
         @apply flex justify-end;
+    }
+
+    &-title {
+        @apply font-normal;
     }
 }
 

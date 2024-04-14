@@ -1,2 +1,1 @@
-import './scss/tailwind.scss';
-import './scss/index.scss';
+import './scss/editor.scss';

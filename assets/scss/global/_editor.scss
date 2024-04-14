@@ -3,27 +3,29 @@
 .edit-post-visual-editor__post-title-wrapper {
 	.wp-block {
 		@apply mx-auto;
-		// max-width: theme( 'screens.lg' );
 
 		&:not( .alignfull ) {
-			// @apply w-[98%] mx-auto #{!important};
 			@apply container;
 		}
 
 		&.is-selected {
 			@apply p-4 outline outline-1;
-			@apply bg-gray-50;
 		}
 
-
-		// &.alignwide {
-		// 	max-width: theme( 'screens.lg' );
-		// }
-
 		&.alignfull {
-			max-width: none;
+			@apply max-w-full;
+			@apply w-full mx-auto #{!important};
+
+			> * {
+				@apply container;
+			}
 		}
 	}
 }
 
 // .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull))
+
+
+// margin-left: calc(50% - 50vw) !important;
+//   margin-right: calc(50% - 50vw) !important;
+//   width: 100vw !important;

@@ -11,6 +11,21 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<?php
+	if ( has_post_thumbnail() ) :
+		?>
+		<figure 
+			class="featured-image alignfull">
+			<?php
+			$size = 'full';
+			the_post_thumbnail( $size );
+			?>
+		</figure>
+		<!-- .featured-image -->
+		<?php
+	endif;
+	?>
+
 	<header class="entry-header has-global-padding">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->

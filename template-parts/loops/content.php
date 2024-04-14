@@ -14,31 +14,26 @@ use function TVLR\get_post_term_image_id;
 ?>
 
 <article <?php post_class( 'post-container card' ); ?>>
-	<?php
-	if ( has_post_thumbnail() ) :
-		?>
+<?php
+if ( has_post_thumbnail() ) :
+	?>
 		<figure class="featured-image">
 			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
-			<?php
-			$size = 'large';
-			the_post_thumbnail( $size );
-			?>
+		<?php
+		$size = 'large';
+		the_post_thumbnail( $size );
+		?>
 			</a>
 		</figure>
 		<!-- .featured-image -->
 		<?php
 	endif;
-	?>
+?>
 
 	<div class="entry-body card-body">
 		<header class="entry-header">
 			
 			<?php the_title( '<h2 class="entry-title card-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-
-			<div class="entry-meta">
-			<?php print_post_date(); ?>
-			<?php print_post_author(); ?>
-			</div>
 
 		</header><!-- .entry-header -->
 

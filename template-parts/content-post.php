@@ -31,7 +31,7 @@ use function TVLR\get_post_term_image_id;
 		</figure>
 		<!-- .featured-image -->
 		<?php
-		if( $caption ) :
+		if ( $caption ) :
 			?>
 			<figcaption>
 				<?php echo wp_kses_post( $caption ); ?>

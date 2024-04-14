@@ -13,7 +13,7 @@ $copyright_info = esc_html__( ' Copyright &copy; ', 'tvlr' ) . esc_attr( gmdate(
 ?>
 <!-- wp:group {"tagName":"div","className":"site-footer__inner","layout":{"type":"default","wideSize":"100vw"},"metadata":{"name":"Site Footer"}} -->
 <div class="wp-block-group site-footer__inner">
-    <!-- wp:site-logo {"width":250,"shouldSyncIcon":true} /-->
+	<!-- wp:site-logo {"width":250,"shouldSyncIcon":true} /-->
 
 	<!-- wp:paragraph {"className":"copyright-info"} -->
 	<p class="copyright-info">

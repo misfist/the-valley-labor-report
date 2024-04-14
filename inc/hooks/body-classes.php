@@ -44,7 +44,7 @@ function body_classes( $classes ) {
 	if ( is_page() ) {
 		$classes[] = 'page-' . basename( get_permalink() );
 
-		if( is_front_page() ) {
+		if ( is_front_page() ) {
 			$classes[] = 'front-page';
 		}
 	}

@@ -1,41 +1,49 @@
-const fs = require( 'fs' );
-const path = require( 'path' );
-const glob = require( 'glob' );
+const fs = require('fs');
+const path = require('path');
+const glob = require('glob');
 
 // Get arrays of all of the files.
-const topLevelPhpFiles = glob.sync( './*.php' ),
+const topLevelPhpFiles = glob.sync('./*.php'),
 	directoryFiles = [
 		'./inc/*.php',
 		'./template-parts/*.php',
 		'./assets/js/**/*.js',
 	];
 
-const themeJsonPath = path.join( __dirname, 'theme.json' );
-const themeJson = fs.readFileSync( themeJsonPath );
-const theme = JSON.parse( themeJson );
+const themeJsonPath = path.join(__dirname, 'theme.json');
+const themeJson = fs.readFileSync(themeJsonPath);
+const theme = JSON.parse(themeJson);
 
 const { palette } = theme.settings.color;
-const colors = palette.reduce( ( acc, item ) => {
-	const [ color, number ] = item.slug.split( '-' );
+const colors = palette.reduce((acc, item) => {
+	const [color, number] = item.slug.split('-');
 
-	if ( number ) {
+	if (number) {
 		// If there is a number identifier, make this an object
-		if ( ! acc[ color ] ) {
-			acc[ color ] = {};
+		if (!acc[color]) {
+			acc[color] = {};
 		}
-		acc[ color ][ number ] = item.color;
+		acc[color][number] = item.color;
 	} else {
-		acc[ color ] = item.color;
+		acc[color] = item.color;
 	}
 
 	return acc;
-}, {} );
+}, {});
+
+const fontFamily = theme.settings.typography.fontFamilies.reduce(
+	(acc, item) => {
+		acc[item.slug] = item.fontFamily;
+		return acc;
+	},
+	{}
+);
 
 module.exports = {
 	corePlugins: {
 		preflight: false,
 	},
-	content: topLevelPhpFiles.concat( directoryFiles ),
+	content: topLevelPhpFiles.concat(directoryFiles),
 	theme: {
 		container: {
 			center: true,
@@ -54,6 +62,15 @@ module.exports = {
 			screens: {
 				xs: '264px',
 				sm: '600px',
+			},
+			fontFamily: {
+				...fontFamily,
+				'sans': ['var( --wp--preset--font-family--sans )'],
+				'serif': ['var( --wp--preset--font-family--serif )'],
+				'heading': ['var( --wp--preset--font-family--sans )'],
+				'mono': ['var( --wp--preset--font-family--mono )'],
+				'display': ['var( --wp--preset--font-family--display )'],
+				'body': ['var( --wp--preset--font-family--work-sans )'],
 			},
 			colors,
 			margin: {
@@ -78,5 +95,5 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [ require( '@tailwindcss/typography' ), require( 'daisyui' ) ],
+	plugins: [require('@tailwindcss/typography'), require('daisyui')],
 };

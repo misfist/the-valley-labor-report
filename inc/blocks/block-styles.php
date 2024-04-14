@@ -16,9 +16,16 @@ function register_block_styles() : void {
 	register_block_style(
 		'core/heading',
 		array(
-            'name'         => 'embellished',
-            'label'        => __( 'Fancy', 'tvlr' ),
-        )
+			'name'  => 'section-heading',
+			'label' => __( 'Section Heading', 'tvlr' ),
+		)
+	);
+	register_block_style(
+		'core/heading',
+		array(
+			'name'  => 'embellished',
+			'label' => __( 'Fancy', 'tvlr' ),
+		)
 	);
 
 	register_block_style(

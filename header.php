@@ -31,10 +31,6 @@
 
 	<?php wp_body_open(); ?>
 
-	<div class="wp-site-blocks">
-
-			<header class="wp-block-template-part site-header">
-				<?php block_header_area(); ?>
-			</header>
-
-	</div><!-- .wp-site-blocks -->
+	<header class="wp-block-template-part site-header">
+		<?php block_header_area(); ?>
+	</header><!-- .site-header -->

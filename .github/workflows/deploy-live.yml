@@ -1,0 +1,37 @@
+name: deploy-live
+on:
+    push:
+        branches:
+            - main
+jobs:
+    web-deploy:
+        name: 🎉 Deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: 🚚 Get latest code
+              uses: actions/checkout@v4
+
+            - name: 📂 Sync files
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+              with:
+                  server: ${{ secrets.SERVER }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  exclude: |
+                      **/.git*
+                      **/.git*/**
+                      **/node_modules/**
+                      **/vendor/**
+                      .*
+                      *.lock
+                      composer.*
+                      package.*
+                      *.md
+                      .vscode/**
+                      phpcs.xml.dist
+                      postcss.config.js
+                      tailwind.config.js
+                      webpack.config.js
+                      webpack.prod.js
+                  server-dir: /wp-content/themes/tvlr/
+                  local-dir: ./

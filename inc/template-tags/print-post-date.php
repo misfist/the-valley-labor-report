@@ -28,8 +28,8 @@ function print_post_date( $args = array() ) {
 	$args = wp_parse_args( $args, $defaults );
 	?>
 	<span class="posted-on">
-		<?php echo esc_html( $args['date_text'] . ' ' ); ?>
-		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><time class="entry-date published" datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_time( $args['date_format'] ) ); ?></time></a>
+		<span class="screen-reader-text"><?php echo esc_html( $args['date_text'] . ' ' ); ?></span>
+		<time class="entry-date published" datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_time( $args['date_format'] ) ); ?></time>
 	</span>
 	<?php
 }

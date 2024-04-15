@@ -1,0 +1,43 @@
+body,
+.skip-link + .wp-site-blocks {
+    @apply flex flex-col h-screen overflow-x-clip;
+}
+
+.site-branding,
+.site-subheader__inner,
+.site-footer__inner {
+    @apply container mx-auto;
+}
+
+body:has( :not( .front-page ) ) {
+    .site-main {
+        @apply container mx-auto;
+    }
+}
+
+.front-page-container {
+    @apply mb-8;
+    @apply lg:mb-10;
+
+    .section {
+        &:not( .alignfull ) {
+            @apply container mx-auto;
+        }
+    }
+}
+
+.site-main {
+    @apply py-10;
+}
+
+.site-footer {
+    @apply mt-auto;
+}
+
+.wp-block-group,
+.wp-block-column {
+    &.has-background {
+        @apply py-8;
+        @apply lg:py-10;
+    }
+}

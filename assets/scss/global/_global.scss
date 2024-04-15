@@ -21,3 +21,68 @@ pre {
 	display: none;
 }
 
+.alignfull {
+	@apply w-screen mx-alignfull #{!important};
+
+	> * {
+		@apply container;
+	}
+
+	> figure,
+	> img,
+	figure,
+	img {
+		@apply lg:container;
+		@apply px-0;
+	}
+}
+
+figcaption {
+    @apply text-sm py-2 mb-4;
+	@apply flex justify-end max-w-screen-lg;
+}
+
+.badge,
+.badge-outline {
+    @apply h-fit inline-flex self-center items-center align-middle py-px line-clamp-1;
+	@apply px-3 border border-primary rounded-full text-primary text-xs text-center tracking-wide font-display font-light uppercase leading-none;
+	@apply bg-primary text-white;
+	
+}
+
+.badge {
+	@apply text-primary;
+    @apply hover:bg-transparent focus:bg-transparent hover:text-primary focus:text-primary;
+}
+
+.badge-outline {
+    @apply bg-transparent;
+	@apply hover:bg-primary focus:bg-primary hover:text-white focus:text-white;
+}
+
+.is-style-summary {
+	@apply border border-gray-300 bg-gray-100 p-4;
+
+	.wp-block-heading {
+		@apply first:mt-0;
+	}
+
+	> ul,
+	> ol {
+		@apply md:columns-2;
+		@apply pl-0  #{!important};
+
+		> li {
+			@apply list-none pl-0 ml-0;
+		}
+
+		ul,
+		ol {
+			@apply my-0 #{!important};
+		}
+	}
+
+	li {
+		@apply break-inside-avoid-column;
+	}
+}

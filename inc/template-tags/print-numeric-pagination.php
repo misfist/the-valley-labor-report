@@ -40,8 +40,8 @@ function print_numeric_pagination( $args = array(), $query = null ) {
 	}
 	?>
 
-	<div class="is-layout-constrained has-global-padding">
-		<nav class="pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', 'tvlr' ); ?>">
+	<div class="has-global-padding pagination-container">
+		<nav class="post-pagination" aria-label="<?php esc_attr_e( 'numeric pagination', 'tvlr' ); ?>">
 			<?php echo paginate_links( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK. ?>
 		</nav>
 	</div>

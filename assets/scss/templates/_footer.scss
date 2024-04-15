@@ -1,0 +1,16 @@
+.site-footer {
+    @apply py-4 lg:py-6;
+    @apply bg-black text-white;
+
+    a {
+        @apply text-white;
+    }
+
+    .wp-block-site-logo {
+        @apply flex justify-center;
+    }
+
+    .copyright-info {
+        @apply text-sm;
+    }
+}

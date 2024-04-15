@@ -31,15 +31,72 @@ const colors = palette.reduce( ( acc, item ) => {
 	return acc;
 }, {} );
 
+const fontFamily = theme.settings.typography.fontFamilies.reduce(
+	( acc, item ) => {
+		acc[ item.slug ] = item.fontFamily;
+		return acc;
+	},
+	{}
+);
+
 module.exports = {
 	corePlugins: {
 		preflight: false,
 	},
 	content: topLevelPhpFiles.concat( directoryFiles ),
 	theme: {
+		container: {
+			center: true,
+			padding: '2rem',
+		},
 		extend: {
-			colors
-		}
+			container: {
+				screens: {
+					sm: '100%',
+					md: '100%',
+					lg: '100%',
+					xl: '1280px',
+					'2xl': '1280px',
+				},
+			},
+			screens: {
+				xs: '264px',
+				sm: '600px',
+			},
+			fontFamily: {
+				...fontFamily,
+				sans: [ 'var( --wp--preset--font-family--sans )' ],
+				serif: [ 'var( --wp--preset--font-family--serif )' ],
+				heading: [ 'var( --wp--preset--font-family--sans )' ],
+				mono: [ 'var( --wp--preset--font-family--mono )' ],
+				display: [ 'var( --wp--preset--font-family--display )' ],
+				body: [ 'var( --wp--preset--font-family--work-sans )' ],
+			},
+			colors: {
+				...colors,
+				'black/10': 'rgba( 0, 0, 0, 0.1 )',
+				'black/20': 'rgba( 0, 0, 0, 0.2 )',
+				'black/30': 'rgba( 0, 0, 0, 0.3 )',
+				'black/40': 'rgba( 0, 0, 0, 0.4 )',
+				'black/50': 'rgba( 0, 0, 0, 0.5 )',
+				'black/60': 'rgba( 0, 0, 0, 0.6 )',
+				'black/70': 'rgba( 0, 0, 0, 0.7 )',
+				'black/80': 'rgba( 0, 0, 0, 0.8 )',
+				'black/90': 'rgba( 0, 0, 0, 0.9 )',
+				'white/10': 'rgba( 255, 255, 255, 0.1 )',
+				'white/20': 'rgba( 255, 255, 255, 0.2 )',
+				'white/30': 'rgba( 255, 255, 255, 0.3 )',
+				'white/40': 'rgba( 255, 255, 255, 0.4 )',
+				'white/50': 'rgba( 255, 255, 255, 0.5 )',
+				'white/60': 'rgba( 255, 255, 255, 0.6 )',
+				'white/70': 'rgba( 255, 255, 255, 0.7 )',
+				'white/80': 'rgba( 255, 255, 255, 0.8 )',
+				'white/90': 'rgba( 255, 255, 255, 0.9 )',
+			},
+			margin: {
+				alignfull: 'calc(50% - 50vw)',
+			},
+		},
 	},
 	daisyui: {
 		themes: [
@@ -58,8 +115,5 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [ 
-		require( '@tailwindcss/typography' ),
-		require( 'daisyui' )
-	],
+	plugins: [ require( '@tailwindcss/typography' ), require( 'daisyui' ) ],
 };

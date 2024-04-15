@@ -2,7 +2,7 @@
  * File livepreview.js.
  *
  * Deal with real time changes asynchronously.
- * @param $
+ * @param {Object} $
  */
 
 ( function ( $ ) {

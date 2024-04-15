@@ -1,0 +1,72 @@
+@mixin chevron( $position: after, $direction: right, $color: var( --wp--preset--color--black ), $size: .75em, $weight: 2px ) {
+    position: relative;
+
+    &:#{$position} {
+        border-style: solid;
+        border-width: #{$weight} #{$weight} 0 0;
+        content: '';
+        display: inline-block;
+        height: $size;
+        width: $size;
+        left: 0.5em;
+        right: auto;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        position: absolute;
+        color: $color;
+
+        @if $direction == up {
+            transform: rotate(-45deg);
+        } @else if $direction == down {
+            transform: rotate(135deg);
+        } @else if $direction == left {
+            transform: rotate(-135deg);
+        } @else {
+            transform: rotate(45deg);
+        }
+
+        @if $position == after {
+            right: 0.5em;
+            left: auto;
+        }
+    }
+
+
+}
+
+@mixin embellish-text( $color: var( --wp--preset--color--black ), $weight: 1px, $length: 1fr ) {
+    display: grid;
+    grid-template-columns: #{$length} max-content #{$length};
+    align-items: center;
+    gap: 0.5rem;
+    
+    &::before,
+    &::after {
+        content: '';
+        height: $weight;
+        background-color: $color;
+    }
+}
+
+@mixin striped-border( $color1: var( --wp--preset--color--accent ), $color2: var( --wp--preset--color--black ), $side: left ) {
+    // border-image: repeating-linear-gradient(45deg, $color2, $color2 5px, $color1 6px, $color1 15px, $color2 16px, $color2 20px) 20/1rem;
+
+
+    @if $side == top {
+        // border-top: 1rem solid $color1;
+        border-width: 1rem 0 0 0;
+    } @else if $side == right {
+        // border-right: 1rem solid $color1;
+        border-width: 0 1rem 0 0;
+    } @else if $side == bottom {
+        // border-bottom: 1rem solid $color1;
+        border-width: 0 0 1rem 0;
+    } @else {
+        // border-left: 1rem solid $color1;
+        border-width: 0 0 0 1rem;
+    }
+    border-image: repeating-linear-gradient(45deg, $color2, $color2 5px, $color1 6px, $color1 15px, $color2 16px, $color2 20px) 20/1rem;
+}
+

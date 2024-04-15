@@ -17,6 +17,8 @@ module.exports = {
 	entry: {
 		index: './assets/index.js',
 		critical: './assets/critical.js',
+		blocks: './assets/blocks.js',
+		editor: './assets/editor.js',
 	},
 	module: {
 		rules: [

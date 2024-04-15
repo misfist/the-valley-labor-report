@@ -1,19 +1,44 @@
+body {
+    @apply font-body;
+}
+
 h1,
 h2,
 h3,
 h4,
+h5 {}
+
+h1,
+h2,
+h3 {
+    @apply font-display font-normal;    
+}
+
+// h3,
+h4,
 h5 {
-    @apply prose;
+    @apply font-heading;    
 }
 
 h1,
 .has-4-xl-font-size {
     @apply text-4xl;
+
+    &.page-title {
+        @apply mt-0;
+    }
 }
 
 h2,
-.has-3-xl-font-size {
+.has-3-xl-font-size,
+.entry-title,
+.wp-block-post-title {
     @apply text-3xl;
+    
+    a {
+        @apply hover:text-primary focus:text-primary;
+    }
+    
 }
 
 h3,
@@ -49,15 +74,58 @@ h3,
     @apply text-6xl;
 }
 
-a {}
+a {
+    @apply text-black/80;
+}
 
-.wp-block-post-excerpt,
-.entry-content {
-    @apply prose;
+.is-style-embellished {
+    @include embellish-text( $weight: 2px, $color: black );
+    @apply uppercase tracking-wide text-xl mt-8;
+}
 
-    p,
-    li,
-    figcaption {
-        @apply prose-base;
+.is-style-intro,
+.is-style-subheading {
+    @apply font-serif;
+}
+
+.entry-meta,
+.post-meta {
+    @apply font-sans font-bold;
+
+    a {
+        @apply hover:text-primary focus:text-primary;
     }
+}
+
+.wp-block-post-title,
+.entry-title,
+.page-title {}
+
+.single .entry-content,
+.wp-block-post-excerpt,
+.wp-block-post-content {
+    @apply prose;
+    @apply max-w-none;
+
+    // p,
+    // li,
+    // figcaption {
+    //     @apply prose-base;
+    // }
+}
+
+blockquote,
+table {
+    @apply prose;
+}
+
+.is-style-section-heading,
+.section-heading,
+.archive-title {
+    @apply font-display text-4xl;
+    @apply border-t-4 border-primary pt-4;
+}
+
+.is-style-intro {
+    @apply font-sans text-[1.25rem] max-w-prose;
 }

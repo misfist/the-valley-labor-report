@@ -1,11 +1,20 @@
 .rounded-btn {
-    border-radius:.25rem;
+    @apply rounded;
 }
 
 .card {
-    border-radius: .25rem !important;
+    @apply rounded-none before:rounded-none;
 
-    &::before {
-        border-radius: .25rem !important;
+    &-body {
+        @apply gap-y-4;
+    }
+
+    &-actions {
+        @apply flex justify-end;
+    }
+
+    &-title {
+        @apply font-normal;
     }
 }
+

@@ -1,8 +1,31 @@
 // Edges of blocks weren't obvious. Adds subtle outline.
-.wp-block-post-content {
+.wp-block-post-content,
+.edit-post-visual-editor__post-title-wrapper {
 	.wp-block {
+		@apply mx-auto;
+
+		&:not( .alignfull ) {
+			@apply container;
+		}
+
 		&.is-selected {
 			@apply p-4 outline outline-1;
 		}
+
+		&.alignfull {
+			@apply max-w-full;
+			@apply w-full mx-auto #{!important};
+
+			> * {
+				@apply container;
+			}
+		}
 	}
 }
+
+// .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull))
+
+
+// margin-left: calc(50% - 50vw) !important;
+//   margin-right: calc(50% - 50vw) !important;
+//   width: 100vw !important;

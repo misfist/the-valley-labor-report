@@ -14,6 +14,14 @@ namespace TVLR;
  */
 function register_block_styles() : void {
 	register_block_style(
+		'core/group',
+		array(
+			'name'  => 'summary',
+			'label' => __( 'Summary', 'tvlr' ),
+		)
+	);
+
+	register_block_style(
 		'core/heading',
 		array(
 			'name'  => 'section-heading',
@@ -33,6 +41,22 @@ function register_block_styles() : void {
 		array(
 			'name'  => 'intro',
 			'label' => __( 'Intro', 'tvlr' ),
+		)
+	);
+
+	register_block_style(
+		'core/list',
+		array(
+			'name'  => 'no-bullets',
+			'label' => __( 'No Bullets', 'tvlr' ),
+		)
+	);
+
+	register_block_style(
+		'core/list',
+		array(
+			'name'  => 'columns',
+			'label' => __( 'Columns', 'tvlr' ),
 		)
 	);
 

@@ -107,11 +107,11 @@ a {
     @apply prose;
     @apply max-w-none;
 
-    p,
-    li,
-    figcaption {
-        @apply prose-base;
-    }
+    // p,
+    // li,
+    // figcaption {
+    //     @apply prose-base;
+    // }
 }
 
 blockquote,
@@ -124,4 +124,8 @@ table {
 .archive-title {
     @apply font-display text-4xl;
     @apply border-t-4 border-primary pt-4;
+}
+
+.is-style-intro {
+    @apply font-sans text-[1.25rem] max-w-prose;
 }

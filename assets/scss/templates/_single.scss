@@ -24,8 +24,19 @@
     }
 
     :where(article) {
+        &:not( .has-post-thumbnail ) {
+            h1 {
+                @extend .is-style-section-heading;
+            }
+        }
+
+        &.has-post-thumbnail {
+            .featured-image {
+                @apply border-t-4 border-primary;
+            }
+        }
+
         h1 {
-            @extend .is-style-section-heading;
             @apply  text-5xl;
         }
 

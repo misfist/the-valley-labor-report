@@ -27,11 +27,6 @@
 			"gradients": [],
 			"palette": [
 				{
-					"color": "var( --wp--preset--color--contrast )",
-					"name": "Base",
-					"slug": "text"
-				},
-				{
 					"color": "#252525",
 					"name": "Contrast",
 					"slug": "contrast"
@@ -57,9 +52,49 @@
 					"slug": "accent"
 				},
 				{
+					"color": "#f3f3f3",
+					"name": "Lightest Gray",
+					"slug": "gray-100"
+				},
+				{
+					"color": "#d1d1d1",
+					"name": "Light Gray",
+					"slug": "gray-300"
+				},
+				{
+					"color": "#727272",
+					"name": "Gray",
+					"slug": "gray-500"
+				},
+				{
+					"color": "#515151",
+					"name": "Dark Gray",
+					"slug": "gray-700"
+				},
+				{
+					"color": "#222222",
+					"name": "Darkest Gray",
+					"slug": "gray-900"
+				},
+				{
 					"color": "#ffffff",
 					"name": "White",
 					"slug": "white"
+				},
+				{
+					"color": "var( --wp--preset--color--contrast )",
+					"name": "Foreground",
+					"slug": "foreground"
+				},
+				{
+					"color": "var( --wp--preset--color--contrast )",
+					"name": "Black",
+					"slug": "black"
+				},
+				{
+					"color": "var( --wp--preset--color--white )",
+					"name": "Background",
+					"slug": "background"
 				}
 			],
 			"text": true
@@ -186,13 +221,7 @@
 					"slug": "24"
 				}
 			],
-			"units": [
-				"%",
-				"px",
-				"rem",
-				"vh",
-				"vw"
-			]
+			"units": [ "%", "px", "rem", "vh", "vw" ]
 		},
 		"typography": {
 			"dropCap": false,
@@ -241,25 +270,19 @@
 							"fontFamily": "Oswald, sans-serif",
 							"fontStyle": "normal",
 							"fontWeight": "300",
-							"src": [
-								"file:./assets/fonts/oswald_300.ttf"
-							]
+							"src": [ "file:./assets/fonts/oswald_300.ttf" ]
 						},
 						{
 							"fontFamily": "Oswald, sans-serif",
 							"fontStyle": "normal",
 							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/oswald_400.ttf"
-							]
+							"src": [ "file:./assets/fonts/oswald_400.ttf" ]
 						},
 						{
 							"fontFamily": "Oswald, sans-serif",
 							"fontStyle": "normal",
 							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/oswald_700.ttf"
-							]
+							"src": [ "file:./assets/fonts/oswald_700.ttf" ]
 						}
 					]
 				},

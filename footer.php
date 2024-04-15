@@ -9,9 +9,11 @@
  * @package tvlr
  */
 
-use function TVLR\print_footer_block;
-
 ?>
+	<div class="site-pre-footer">
+		<?php block_template_part( 'pre-footer' ); ?>
+	</div><!-- .site-pre-footer -->
+
 	<footer class="wp-block-template-part site-footer">
 		<?php block_footer_area(); ?>
 	</footer>

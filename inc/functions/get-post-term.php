@@ -17,8 +17,8 @@ namespace TVLR;
  */
 function get_post_term( $post_id = 0, $taxonomy = 'category', $field = 'name' ) : string {
 	$post_id = ( $post_id ) ? $post_id : get_the_ID();
-	$term = get_post_term_object( $post_id, $taxonomy );
-	if( ! empty( $term ) && ! \is_wp_error( $term )  ) {
+	$term    = get_post_term_object( $post_id, $taxonomy );
+	if ( ! empty( $term ) && ! \is_wp_error( $term ) ) {
 		return $term->{$field};
 	}
 	return '';
@@ -35,18 +35,18 @@ function get_post_term_object( $post_id = 0, $taxonomy = 'category' ) {
 	$post_id = ( $post_id ) ? $post_id : get_the_ID();
 	if ( function_exists( '\the_seo_framework' ) ) {
 		$term = \the_seo_framework()->get_primary_term( $post_id, $taxonomy );
-		if( $term ) {
+		if ( $term ) {
 			return $term;
 		}
 	} else {
 		$term = \wp_get_post_terms( $post_id, $taxonomy, array( 'count' => 1 ) );
 		if ( ! empty( $term ) && ! \is_wp_error( $term ) ) {
-			if( is_array( $term ) ) {
+			if ( is_array( $term ) ) {
 				return $term[0];
 			} else {
 				return $term;
 			}
-		}		
+		}
 	}
 	return false;
 }

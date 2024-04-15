@@ -59,3 +59,30 @@ figcaption {
     @apply bg-transparent;
 	@apply hover:bg-primary focus:bg-primary hover:text-white focus:text-white;
 }
+
+.is-style-summary {
+	@apply border border-gray-300 bg-gray-100 p-4;
+
+	.wp-block-heading {
+		@apply first:mt-0;
+	}
+
+	> ul,
+	> ol {
+		@apply md:columns-2;
+		@apply pl-0  #{!important};
+
+		> li {
+			@apply list-none pl-0 ml-0;
+		}
+
+		ul,
+		ol {
+			@apply my-0 #{!important};
+		}
+	}
+
+	li {
+		@apply break-inside-avoid-column;
+	}
+}

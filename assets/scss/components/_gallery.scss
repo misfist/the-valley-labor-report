@@ -1,9 +1,11 @@
-.wp-block-gallery {
+figure.wp-block-gallery {
     &.wp-block-gallery-is-layout-grid,
     &.is-layout-grid,
     &.blocks-gallery-grid,
-    &.is-layout-flex {
+    &.is-layout-flex,
+    &.has-nested-images {
         @apply gap-6;
+        @apply items-center #{!important};
         @apply md:gap-10;
         @apply lg:gap-12;
         @apply grid grid-cols-1 #{!important};
@@ -29,6 +31,14 @@
         figure.wp-block-image,
         figure.wp-block-image:not(#individual-image) {
             width: initial !important;
+            margin-top: initial !important;
+            margin-bottom: initial !important;
+            @apply justify-center;
+
+            img,
+            figcaption {
+                @apply max-w-[300px] mx-auto justify-self-center #{!important}
+            }
 
             figcaption {
                 @apply static bg-none justify-center;

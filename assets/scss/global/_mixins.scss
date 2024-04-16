@@ -36,9 +36,9 @@
 
 }
 
-@mixin embellish-text( $color: var( --wp--preset--color--black ), $weight: 1px, $length: 1fr ) {
+@mixin embellish-text( $color: var( --wp--preset--color--black ), $weight: 1px, $length: 25% ) {
     display: grid;
-    grid-template-columns: #{$length} max-content #{$length};
+    grid-template-columns: 1fr max-content 1fr;
     align-items: center;
     gap: 0.5rem;
     
@@ -47,6 +47,16 @@
         content: '';
         height: $weight;
         background-color: $color;
+        width: $length;
+    }
+
+    &::before {
+        @apply justify-self-end;
+        
+    }
+
+    &::after  {
+        @apply justify-self-start;
     }
 }
 

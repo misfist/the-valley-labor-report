@@ -41,7 +41,7 @@
 }
 
 .secondary-navigation {
-    @apply tracking-wide;
+    @apply tracking-wide font-bold;
     @apply text-[1rem] #{!important};
     @apply lg:text-[1.25rem] #{!important};
 
@@ -51,7 +51,7 @@
 
         li {
             &:not(:first-child) {
-                @apply pl-4 border-l-2 border-black;
+                @apply pl-4 border-l-2 border-primary;
             }
             &:not(:last-child) {
                 @apply pr-4;

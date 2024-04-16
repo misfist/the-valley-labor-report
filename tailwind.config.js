@@ -96,6 +96,11 @@ module.exports = {
 			margin: {
 				alignfull: 'calc(50% - 50vw)',
 			},
+			flexBasis: {
+				'max': 'max-content',
+				'min': 'min-content',
+				'fit': 'fit-content',
+			}
 		},
 	},
 	daisyui: {

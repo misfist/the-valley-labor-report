@@ -131,7 +131,7 @@ table {
 
 .is-style-embellished {
     @include embellish-text( $weight: 2px, $color: black );
-    @apply uppercase tracking-wide text-xl mt-8;
+    @apply uppercase tracking-wide text-xl mt-8 px-12;
 }
 
 :where( .has-primary-background-color, .has-black-background-color, .has-gray-900-background-color ) {

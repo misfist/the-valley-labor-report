@@ -86,3 +86,8 @@ figcaption {
 		@apply break-inside-avoid-column;
 	}
 }
+
+
+header + figure {
+	@apply mt-0;
+}

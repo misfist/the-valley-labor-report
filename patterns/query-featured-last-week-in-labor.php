@@ -8,13 +8,17 @@
 $category = get_category_by_slug( 'last-week-in-southern-labor' );
 $id       = ( $category ) ? $category->term_id : 3;
 $name     = ( $category ) ? $category->name : __( 'Last Week in Southern Labor', 'tvlr' );
+$link     = ( $category ) ? get_category_link( $category ) : '';
 ?>
 
 <!-- wp:group {"tagName":"header","metadata":{"name":"Section Header"},"className":"section-header","layout":{"type":"default"}} -->
 <header class="wp-block-group section-header">
 	<!-- wp:heading {"className":"section-heading"} -->
-	<h2 class="wp-block-heading is-style-section-heading"><?php echo $name; ?></h2>
+	<h2 class="wp-block-heading"><?php echo $name; ?></h2>
 	<!-- /wp:heading -->
+	<!-- wp:paragraph {"className":"view-all"} -->
+	<p class="view-all"><a href="<?php echo $link ; ?>"><?php esc_attr_e( 'View All', 'tvlr' ); ?></a></p>
+	<!-- /wp:paragraph -->
 </header>
 <!-- /wp:group -->
 

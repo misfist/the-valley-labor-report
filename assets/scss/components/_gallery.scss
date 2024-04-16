@@ -59,3 +59,19 @@ figure.wp-block-gallery {
 
 }
 
+.wp-block-automatic-youtube-gallery-block {
+
+    // @apply not-prose;
+
+    .ayg-player {
+        &:not( .ayg-row ) {
+            @apply hidden;
+        }
+    }
+
+    :where( [class^="ayg-theme"] ) {
+        .yg-thumbnail-image {
+            @apply mt-0;
+        }
+    }
+}

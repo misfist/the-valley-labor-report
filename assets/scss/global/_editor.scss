@@ -8,6 +8,10 @@
 			@apply container;
 		}
 
+		figure {
+			@apply px-0 #{!important};
+		}
+
 		&.is-selected {
 			@apply p-4 outline outline-1;
 		}

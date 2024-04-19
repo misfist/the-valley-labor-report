@@ -60,8 +60,16 @@ module.exports = {
 				},
 			},
 			screens: {
-				xs: '264px',
+				xs: '276px',
 				sm: '600px',
+				'xs-only': { min: '276px', max: '599px' },
+				'xs-max': { max: '599px' },
+				'sm-only': { min: '600px', max: '781px' },
+				'sm-max': { max: '781px' },
+				'md-only': { min: '782px', max: '1023px' },
+				'md-max': { max: '1023px' },
+				'lg-only': { min: '1024px', max: '1279px' },
+				'lg-max': { max: '1279px' },
 			},
 			fontFamily: {
 				...fontFamily,

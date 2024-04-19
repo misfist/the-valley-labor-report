@@ -10,8 +10,8 @@
  */
 
 ?>
-<!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","type":"constrained","inherit":true,"perPage":1},"displayLayout":{"type":"div"},"layout":{"type":"default"}} -->
-<div class="wp-block-query">
+<!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","type":"constrained","inherit":true,"perPage":12},"displayLayout":{"type":"div"},"layout":{"type":"default"},"tagName":"section"} -->
+<section class="wp-block-query">
 	<!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
 		<!-- wp:group {"className":"post-container card","layout":{"type":"default"},"metadata":{"name":"Post Container"}} -->
 		<div class="wp-block-group post-container card">
@@ -50,5 +50,5 @@
 		<!-- wp:query-pagination-numbers /-->
 		<!-- wp:query-pagination-next /-->
 	<!-- /wp:query-pagination -->
-</div>
+</section>
 <!-- /wp:query -->

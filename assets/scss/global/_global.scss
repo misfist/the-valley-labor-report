@@ -91,3 +91,11 @@ figcaption {
 header + figure {
 	@apply mt-0;
 }
+
+.wp-block-search {
+	&__button {
+		&.has-icon {
+			@apply bg-transparent p-0;
+		}
+	}
+}

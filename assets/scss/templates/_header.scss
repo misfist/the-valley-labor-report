@@ -46,8 +46,8 @@
         @apply lg:py-6;
 
         &__inner {
-            @apply flex-col;
-            @apply sm:flex-nowrap sm:flex-row;
+            @apply flex justify-between items-center gap-x-4;
+            @apply xs-max:flex-col xs-max:justify-center xs-max:gap-y-2;
         }
     }
 

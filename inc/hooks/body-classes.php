@@ -54,6 +54,13 @@ function body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	if ( is_singular() ) {
+		global $post;
+		if( has_post_thumbnail() ) {
+			$classes[] = 'has-featured-image';
+		}
+	}
+
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';

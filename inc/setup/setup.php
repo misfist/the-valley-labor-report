@@ -98,3 +98,18 @@ function setup() {
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
+
+/**
+ * Add custom images sizes to block editor
+ * 
+ * @see https://developer.wordpress.org/reference/hooks/image_size_names_choose/
+ *
+ * @param  array $sizes
+ * @return array
+ */
+function add_image_sizes( array $sizes ) : array {
+    return array_merge( $sizes, array(
+        'full-width' => __( 'Full Width', 'tvlr' ),
+    ) );
+}
+add_filter( 'image_size_names_choose', __NAMESPACE__ . '\add_image_sizes' );

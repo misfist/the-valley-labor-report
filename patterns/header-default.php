@@ -30,21 +30,14 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"site-subheader"} -->
+<!-- wp:group {"metadata":{"name":"Secondary Navigation"},"className":"site-subheader","layout":{"type":"default"}} -->
 <div class="wp-block-group site-subheader">
-	<!-- wp:columns {"verticalAlignment":"center","isStackedOnMobile":false,"className":"site-subheader__inner"} -->
-	<div class="wp-block-columns are-vertically-aligned-center is-not-stacked-on-mobile site-subheader__inner">
-		<!-- wp:column {"verticalAlignment":"center","layout":{"type":"default"}} -->
-		<div class="wp-block-column is-vertically-aligned-center">
-			<!-- wp:pattern {"slug":"tvlr/social-links"} /-->
-		</div>
-		<!-- /wp:column -->
+    <!-- wp:group {"metadata":{"name":"Secondary Navigation Wrapper"},"className":"site-subheader__inner","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group site-subheader__inner">
+        <!-- wp:navigation {"ref":1191,"overlayMenu":"never","className":"social-navigation","layout":{"type":"flex","flexWrap":"nowrap"}} /-->
 
-		<!-- wp:column {"verticalAlignment":"center","layout":{"type":"default"}} -->
-		<div class="wp-block-column is-vertically-aligned-center">
-			<!-- wp:navigation {"ref":171,"overlayMenu":"never","className":"secondary-navigation"} /--></div>
-		<!-- /wp:column -->
-	</div>
-	<!-- /wp:columns -->
+        <!-- wp:navigation {"ref":171,"overlayMenu":"never","className":"secondary-navigation","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} /-->
+    </div>
+    <!-- /wp:group -->
 </div>
 <!-- /wp:group -->

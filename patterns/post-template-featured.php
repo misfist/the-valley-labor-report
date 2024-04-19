@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Post Template
+ * Title: Post Template - Featured
  * Slug: tvlr/post-template-featured
  * Categories: hidden
  * Inserter: false

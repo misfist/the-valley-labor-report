@@ -22,12 +22,12 @@ $link     = ( $category ) ? get_category_link( $category ) : '';
 </header>
 <!-- /wp:group -->
 
-<!-- wp:query {"queryId":6,"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[<?php echo intval( $id ); ?>]}},"displayLayout":{"type":"div"},"enhancedPagination":true} -->
-<div class="wp-block-query">
+<!-- wp:query {"queryId":6,"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[<?php echo intval( $id ); ?>]}},"displayLayout":{"type":"div"},"enhancedPagination":true,"tagName":"section"} -->
+<section class="wp-block-query">
 	<!-- wp:post-template -->
 
 		<!-- wp:pattern {"slug":"tvlr/post-template-featured"} /-->
 
 	<!-- /wp:post-template -->
-</div>
+</section>
 <!-- /wp:query -->

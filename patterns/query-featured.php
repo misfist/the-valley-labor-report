@@ -5,8 +5,8 @@
  * Categories: query
  */
 ?>
-<!-- wp:query {"queryId":6,"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[]}},"enhancedPagination":true} -->
-<div class="wp-block-query">
+<!-- wp:query {"queryId":6,"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[]}},"enhancedPagination":true,"tagName":"section"} -->
+<section class="wp-block-query">
 	<!-- wp:post-template -->
 		<!-- wp:group {"className":"post-container card","layout":{"type":"default"},"metadata":{"name":"Post Container"}} -->
 		<div class="wp-block-group post-container card">
@@ -34,5 +34,5 @@
 		</div>
 		<!-- /wp:group -->
 	<!-- /wp:post-template -->
-</div>
+</section>
 <!-- /wp:query -->

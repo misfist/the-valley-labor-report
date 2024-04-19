@@ -1,22 +1,33 @@
 .wp-block-navigation {
     @apply uppercase font-sans;
 
-    &__responsive-container {
-        &.is-menu-open {
-            .wp-block-navigation {
-                &__responsive-container {
-                    &-content {
-                        @apply px-12 pb-12 pt-16;
-                    
-                        ul {
-                            @apply mt-10;
+    &__responsive {
+        &-dialog {
+            @apply gap-4;
+        }
+
+        &-container {
+            &.is-menu-open {
+                .wp-block-navigation {
+                    &__responsive-container {
+                        &-content {
+                            @apply px-12 pb-12 pt-16;
+                        
+                            ul {
+                                @apply mt-10;
+                            }
+                        }
+                
+                        &-close {
+                            @apply mr-10 mt-10;
                         }
                     }
-            
-                    &-close {
-                        @apply mr-10 mt-10;
-                    }
                 }
+            }
+    
+            a {
+                @apply underline decoration-2 decoration-transparent underline-offset-4;
+                @apply hover:decoration-primary focus:decoration-primary;
             }
         }
     }
@@ -29,8 +40,11 @@
         @apply lg:text-[1.25rem] #{!important};
         
         ul {
+            @apply gap-2;
             @apply sm:gap-4;
-            @apply md:gap-6;
+            @apply lg:gap-6;
+
+            @apply sm-max:text-sm;
 
             a {
                 @apply underline decoration-2 decoration-transparent underline-offset-4;
@@ -40,10 +54,17 @@
     };
 }
 
+.secondary-navigation,
+.social-navigation {
+    @apply mx-0 #{!important};
+}
+
 .secondary-navigation {
     @apply tracking-wide font-bold;
     @apply text-[1rem] #{!important};
     @apply lg:text-[1.25rem] #{!important};
+
+    @apply xs-max:order-first;
 
     ul {
         @apply gap-0 justify-center;
@@ -59,7 +80,7 @@
         }
     }
 
-    a.wp-block-navigation-item__content {
+    a {
         text-decoration: underline;
         @apply decoration-transparent underline-offset-4 transition-[text-decoration];
         @apply underline decoration-2  #{!important};
@@ -71,10 +92,18 @@
     }
 }
 
-.site-header {
+.social-navigation {
     .wp-block-social-links {
         @apply justify-center;
         @apply sm:justify-start;
+    }
+}
+
+/* Override obnoxiouly opinionated CSS */
+body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    &.secondary-navigation,
+    &.social-navigation {
+        @apply mx-0 mt-0 #{!important};
     }
 }
 

@@ -6,7 +6,7 @@
  */
 ?>
 
-<!-- wp:group {"tagName":"section","className":"section latest-videos","layout":{"type":"constrained"},"metadata":{"name":"Latest Clips"}} -->
+<!-- wp:group {"tagName":"section","className":"section latest-videos","layout":{"type":"constrained"},"metadata":{"name":"Latest Clips"},"tagName":"section"} -->
 <section class="wp-block-group section latest-videos">
 	<!-- wp:group {"tagName":"header","className":"section__header","layout":{"type":"constrained"},"metadata":{"name":"Section Header"}} -->
 	<header class="wp-block-group section__header">

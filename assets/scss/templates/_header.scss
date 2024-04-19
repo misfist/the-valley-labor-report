@@ -5,11 +5,12 @@
 
     .wp-block-site-logo,
     .wp-block-site-logo.is-default-size {
-        @apply flex h-12 min-h-[40px] min-w-[165px];
+        @apply flex h-12 min-h-[40px] min-w-[164px] w-[250px];
         @apply lg:h-16;
 
         img {
-            @apply h-full w-full object-contain;
+            @apply h-full w-full min-w-[164px] object-contain object-left;
+            @apply md:w-[250px];
         }
     }
 
@@ -30,7 +31,8 @@
 
             .wp-block-column {
                 &:first-child {
-                    @apply basis-1/4 shrink w-min;
+                    @apply shrink w-min;
+                    @apply basis-min #{!important};
                 }
 
                 &:last-child {
@@ -46,8 +48,8 @@
         @apply lg:py-6;
 
         &__inner {
-            @apply flex-col;
-            @apply sm:flex-nowrap sm:flex-row;
+            @apply flex justify-between items-center gap-x-4;
+            @apply xs-max:flex-col xs-max:justify-center xs-max:gap-y-2;
         }
     }
 

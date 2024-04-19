@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default Header
- * Slug: tvlr/header-default
+ * Slug: tvlr/header
  * Description: Header with site logo and navigation.
  * Categories: header
  * Block Types: core/template-part/header

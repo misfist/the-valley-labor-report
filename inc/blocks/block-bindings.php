@@ -25,6 +25,11 @@ function register_block_bindings() : void {
 		'label'              => __( 'Copyright', 'tvlr' ),
 		'get_value_callback' => __NAMESPACE__ . '\get_copyright',
 	) );
+
+	register_block_bindings_source( __NAMESPACE__ . '/blog-title', array(
+		'label'              => __( 'Blog Title', 'tvlr' ),
+		'get_value_callback' => __NAMESPACE__ . '\get_blog_title',
+	) );
 }
 add_action( 'init', __NAMESPACE__ . '\register_block_bindings' );
 
@@ -52,4 +57,15 @@ function get_featured_image_url( $source_args ) {
  */
 function get_copyright() : string {
 	return '&copy;' . date( 'Y' );
+}
+
+/**
+ * Get title of page assigned as "Blog"
+ *
+ * @return string
+ */
+function get_blog_title() : string {
+	$blog_id = get_option( 'page_for_posts' );
+	$title = ( $blog_id ) ? get_post_field( 'post_title', (int) $blog_id ) : __( 'Archive', 'tvlr' );
+	return $title;
 }

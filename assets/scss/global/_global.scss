@@ -87,7 +87,6 @@ figcaption {
 	}
 }
 
-
 header + figure {
 	@apply mt-0;
 }
@@ -97,5 +96,13 @@ header + figure {
 		&.has-icon {
 			@apply bg-transparent p-0;
 		}
+	}
+}
+
+.card {
+	@apply h-full;
+
+	.card-actions {
+		@apply mt-auto;
 	}
 }

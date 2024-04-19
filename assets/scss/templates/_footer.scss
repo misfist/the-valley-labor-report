@@ -10,6 +10,15 @@
         @apply flex justify-center;
     }
 
+    .custom-logo-link {
+        @apply flex h-12 min-h-[40px] min-w-[250px];
+        @apply lg:h-16;
+
+        img {
+            @apply h-full w-full min-w-[250px] object-contain;
+        }
+    }
+
     .copyright-info {
         @apply text-sm;
     }

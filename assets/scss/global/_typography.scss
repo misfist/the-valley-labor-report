@@ -97,6 +97,10 @@ a {
     @apply prose;
     @apply max-w-none;
 
+    h2 {
+        @apply font-normal;
+    }
+
     // p,
     // li,
     // figcaption {
@@ -110,10 +114,15 @@ table {
 }
 
 .is-style-section-heading,
-.section-heading,
-.archive-title {
+.section-header,
+.archive-header,
+.site-main > .post-header {
     @apply font-display text-4xl;
     @apply border-t-4 border-primary pt-4;
+
+    .post-title {
+        @apply font-display text-4xl;
+    }
 }
 
 :where( .has-primary-background-color, .has-black-background-color, .has-gray-900-background-color ) {

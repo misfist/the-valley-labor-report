@@ -365,18 +365,23 @@
 					"slug": "base"
 				},
 				{
-					"name": "Large",
+					"name": "Medium",
 					"size": "1.125rem",
+					"slug": "md"
+				},
+				{
+					"name": "Large",
+					"size": "1.25rem",
 					"slug": "lg"
 				},
 				{
 					"name": "X Large",
-					"size": "1.25rem",
+					"size": "1.5rem",
 					"slug": "xl"
 				},
 				{
 					"name": "2X Large",
-					"size": "1.5rem",
+					"size": "1.75rem",
 					"slug": "2xl"
 				},
 				{

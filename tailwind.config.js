@@ -80,6 +80,19 @@ module.exports = {
 				display: [ 'var( --wp--preset--font-family--display )' ],
 				body: [ 'var( --wp--preset--font-family--work-sans )' ],
 			},
+			fontSize: {
+				xs: 'var( --wp--preset--font-size--xs )',
+				sm: 'var( --wp--preset--font-size--sm )',
+				base: 'var( --wp--preset--font-size--base )',
+				md: 'var( --wp--preset--font-size--md )',
+				lg: 'var( --wp--preset--font-size--lg )',
+				xl: 'var( --wp--preset--font-size--xl )',
+				'2xl': 'var( --wp--preset--font-size--2xl )',
+				'3xl': 'var( --wp--preset--font-size--3xl )',
+				'4xl': 'var( --wp--preset--font-size--4xl )',
+				'5xl': 'var( --wp--preset--font-size--5xl )',
+				'6xl': 'var( --wp--preset--font-size--6xl )'
+			},
 			colors: {
 				...colors,
 				'black/10': 'rgba( 0, 0, 0, 0.1 )',

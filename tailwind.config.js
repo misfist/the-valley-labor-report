@@ -87,11 +87,11 @@ module.exports = {
 				md: 'var( --wp--preset--font-size--md )',
 				lg: 'var( --wp--preset--font-size--lg )',
 				xl: 'var( --wp--preset--font-size--xl )',
-				'2xl': 'var( --wp--preset--font-size--2xl )',
-				'3xl': 'var( --wp--preset--font-size--3xl )',
-				'4xl': 'var( --wp--preset--font-size--4xl )',
-				'5xl': 'var( --wp--preset--font-size--5xl )',
-				'6xl': 'var( --wp--preset--font-size--6xl )'
+				'2xl': 'var( --wp--preset--font-size--2-xl )',
+				'3xl': 'var( --wp--preset--font-size--3-xl )',
+				'4xl': 'var( --wp--preset--font-size--4-xl )',
+				'5xl': 'var( --wp--preset--font-size--5-xl )',
+				'6xl': 'var(--wp--preset--font-size--6-xl )'
 			},
 			colors: {
 				...colors,

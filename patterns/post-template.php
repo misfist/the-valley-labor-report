@@ -28,7 +28,7 @@
 		<div class="wp-block-group entry-meta card-actions">
 			<!-- wp:post-date /-->
 
-			<!-- wp:post-author {"avatarSize":24,"showAvatar":false} /-->
+			<!-- wp:post-author {"isLink":true,"avatarSize":24,"showAvatar":false} /-->
 
 			<!-- wp:post-terms {"term":"category"} /-->
 		</div>

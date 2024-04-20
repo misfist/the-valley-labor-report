@@ -53,6 +53,26 @@
         }
     }
 
+    .wp-block-search {
+        &__input {
+            @apply bg-transparent border-t-0 border-r-0 border-l-0 border-b-2 border-white;
+        }
+    }
+
+    .has-modal-open {
+        .wp-block-search {
+            &__input {
+                @apply border-base-content;
+            }
+
+            &__button {
+                svg {
+                    @apply fill-base-content;
+                }
+            }
+        }
+    }
+
     .wp-block-social-links {
         @apply gap-4;
         @apply lg:gap-6;

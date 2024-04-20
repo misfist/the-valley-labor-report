@@ -32,7 +32,7 @@ $className = ( ! empty( $classes ) ) ? ' ' . implode( ' ', $classes ) : '';
 
 		<!-- wp:group {"metadata":{"name":"Post Content"},"className":"entry-content","layout":{"type":"default"}} -->
 		<div class="wp-block-group entry-content">
-			<!-- wp:post-content /-->
+			<!-- wp:post-content {"className":"prose max-w-none"}/-->
 		</div>
 		<!-- /wp:group -->
 

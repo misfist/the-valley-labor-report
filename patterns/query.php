@@ -3,8 +3,8 @@
  * Title: Default Query
  * Slug: tvlr/query
  * Description: Query of posts in grid.
- * Categories: hidden
- * Inserter: false
+ * Categories: query
+ * Block Types: core/query
  *
  * @package tvlr
  */

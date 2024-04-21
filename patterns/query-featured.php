@@ -3,6 +3,7 @@
  * Title: Featured Post
  * Slug: tvlr/query-featured
  * Categories: query
+ * Block Types: core/query
  */
 ?>
 <!-- wp:query {"queryId":6,"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[]}},"enhancedPagination":true,"tagName":"section"} -->

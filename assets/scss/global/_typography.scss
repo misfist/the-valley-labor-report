@@ -117,12 +117,6 @@ a {
     h2 {
         @apply font-normal;
     }
-
-    // p,
-    // li,
-    // figcaption {
-    //     @apply prose-base;
-    // }
 }
 
 blockquote,
@@ -151,13 +145,17 @@ table {
 .is-style-intro,
 .is-style-subheading,
 .single .entry-content .is-style-intro,
-.single .entry-content .is-style-subheading {
-    @apply font-sans text-md max-w-[90%] text-pretty;
+.single .entry-content .is-style-subheading,
+.wp-block-post-content p.is-style-intro,
+.wp-block-post-content p.is-style-subheading {
+    @apply font-sans text-lg max-w-[90%] text-pretty;
 }
 
 .is-style-embellished {
-    @include embellish-text( $weight: 2px, $color: black );
-    @apply uppercase tracking-wide text-xl mt-8 px-12;
+    &.wp-block-heading {
+        @include embellish-text( $weight: 2px, $color: black );
+        @apply uppercase tracking-wide text-xl mt-8 px-12;
+    }
 }
 
 :where( .has-primary-background-color, .has-black-background-color, .has-gray-900-background-color ) {

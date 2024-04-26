@@ -169,6 +169,10 @@ h1.entry-title {
     .section-header {
         @apply border-t-4 border-primary pt-4 flex justify-between items-center gap-x-4;
 
+        .wp-block-heading {
+            @apply line-clamp-1;
+        }
+
         p {
             @apply mt-0 basis-fit text-nowrap;
         }

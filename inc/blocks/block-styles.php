@@ -67,5 +67,14 @@ function register_block_styles() : void {
 			'label' => __( 'Logo Grid', 'tvlr' ),
 		)
 	);
+
+	register_block_style(
+		'core/details',
+		array(
+			'name'  => 'embellished',
+			'label' => __( 'Fancy', 'tvlr' ),
+		)
+	);
+
 }
 add_action( 'init', __NAMESPACE__ . '\register_block_styles' );

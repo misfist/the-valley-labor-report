@@ -111,7 +111,10 @@ a {
     ul,
     ol,
     table {
-        @apply prose;
+        &:not([class]) {
+            @apply prose;
+        }
+        
     }
 
     h2 {
@@ -153,13 +156,13 @@ table {
 
 .is-style-embellished {
     &.wp-block-heading {
-        @include embellish-text( $weight: 2px, $color: black );
-        @apply uppercase tracking-wide text-xl mt-8 px-12;
+        @include embellish-text( $weight: 2px );
+        @apply uppercase tracking-wide text-xl mt-8;
     }
 }
 
 :where( .has-primary-background-color, .has-black-background-color, .has-gray-900-background-color ) {
     .is-style-embellished {
-        @include embellish-text( $weight: 2px, $color: white );
+        // @include embellish-text( $weight: 2px );
     }
 }

@@ -10,7 +10,7 @@
 	<!-- wp:heading -->
 	<h2 class="wp-block-heading">
 		<?php
-		printf( __( 'Did we miss something? Send us your <strong>union updates</strong>: <a href="%s">www.tvlr.fm/contact</a>', 'tvlr' ), esc_url( 'https://tvlr.test/contact/' ) );
+		printf( __( 'Did we miss something? Send us your <strong>union updates</strong>: <a href="%s">www.tvlr.fm/contact</a>', 'tvlr' ), home_url( '/contact/' ) );
 		?>
 	</h2>
 	<!-- /wp:heading -->

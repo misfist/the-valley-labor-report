@@ -36,28 +36,31 @@
 
 }
 
-@mixin embellish-text( $color: var( --wp--preset--color--black ), $weight: 1px, $length: 25% ) {
-    display: grid;
-    grid-template-columns: 1fr max-content 1fr;
-    align-items: center;
-    gap: 0.5rem;
+@mixin embellish-text( $color: currentColor, $weight: 1px, $length: 25% ) {
+    @apply grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center justify-center text-center gap-2 leading-tight;
+    // display: grid;
+    // grid-template-columns: 1fr auto 1fr;
+    // align-items: center;
+    // gap: 0.5rem;
     
-    &::before,
-    &::after {
-        content: '';
-        height: $weight;
-        background-color: $color;
-        width: $length;
+    @media screen and ( min-width: 600px ) {
+        &::before,
+        &::after {
+            content: '';
+            height: $weight;
+            background-color: $color;
+            width: $length;
+        }        
+        &::before {
+            @apply justify-self-end;
+            
+        }
+
+        &::after  {
+            @apply justify-self-start;
+        }
     }
 
-    &::before {
-        @apply justify-self-end;
-        
-    }
-
-    &::after  {
-        @apply justify-self-start;
-    }
 }
 
 @mixin striped-border( $color1: var( --wp--preset--color--accent ), $color2: var( --wp--preset--color--black ), $side: left ) {

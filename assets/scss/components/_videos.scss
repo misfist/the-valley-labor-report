@@ -1,0 +1,48 @@
+.jmayt-list-outer-wrap {
+    all: unset !important;
+    @apply mt-0;
+}
+
+.jmayt {
+    &-list-wrap {
+        // all: unset !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        @apply grid grid-cols-1 items-start;
+        @apply sm:grid-cols-2 gap-8;
+    
+        &.columns-1 {
+            @apply sm:grid-cols-1 gap-0;
+        }
+    
+        &.columns-3 {
+            @apply md:grid-cols-3;
+        }
+    
+        &.columns-4 {
+            @apply lg:grid-cols-4;
+        }
+    
+        &::before {
+            @apply hidden #{!important};
+        }
+
+        .jma-responsive-wrap {
+            @apply aspect-video;
+        }
+    }
+
+    &-list-item {
+        margin-bottom: unset !important;
+        padding-left: unset !important;
+        padding-right: unset !important;
+    }
+
+    &-text-wrap {
+        @apply min-h-0 #{!important};
+    }
+
+    &-text-wrap {
+        @apply sr-only;
+    }
+}
